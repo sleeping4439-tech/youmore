@@ -1,22 +1,29 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f5f2e9">
-<title>ゆうもれ</title>
-<style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f5f2e9;font-family:system-ui,sans-serif}main{width:min(100%,620px);margin:auto;position:relative;line-height:0}img{width:100%;height:auto;display:block}a.hotspot{position:absolute;left:5.4%;width:17%;height:4.1%;display:block;border-radius:3px;outline-offset:3px}a.hotspot:focus-visible{outline:3px solid #ffca72;background:#fff5}a.blog{top:17.3%}a.photo{top:21.45%}a.illust{top:25.55%}a.music{top:29.7%}a.home{left:12%;top:3%;width:65%;height:15%}span.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(min-width:700px){main{box-shadow:0 6px 35px #0001}}
-</style>
-</head>
-<body>
-<main aria-label="ゆうもれ トップページ">
-<img src="assets/hero.png?v=20261023-2" alt="夕暮れの街を見下ろす場所に座る、顔に『ゆ』のある人物。ゆうもれのロゴと4つのカテゴリが描かれたイラスト" width="1024" height="1792">
-<a class="hotspot home" href="index.html" aria-label="ゆうもれ トップへ"><span class="sr">トップ</span></a>
-<a class="hotspot blog" href="blog.html" aria-label="ブログへ"><span class="sr">BLOG</span></a>
-<a class="hotspot photo" href="photo.html" aria-label="写真へ"><span class="sr">PHOTO</span></a>
-<a class="hotspot illust" href="illustration.html" aria-label="イラストへ"><span class="sr">ILLUST</span></a>
-<a class="hotspot music" href="music.html" aria-label="音楽へ"><span class="sr">MUSIC</span></a>
-</main>
-</body>
-</html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f1e7"><title>ゆうもれ</title><style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:#111;background:#f5f1e7}
+.stage{position:relative;isolation:isolate;width:min(100%,760px);min-height:100svh;margin:auto;overflow:hidden;background-color:#f5f1e7;background-image:linear-gradient(#72736b27 1px,transparent 1px),linear-gradient(90deg,#72736b27 1px,transparent 1px);background-size:39px 39px}
+.stage:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at center,transparent 25%,#e9e3d344 100%)}
+.scribbles{position:absolute;inset:0;overflow:hidden;pointer-events:none}.word{position:absolute;white-space:nowrap;color:#222;opacity:var(--o,.53);font-family:serif;font-size:var(--s,16px);transform:rotate(var(--r,0deg));letter-spacing:.06em}.word:nth-child(5n){writing-mode:vertical-rl}.word:nth-child(7n){font-weight:900}.word:nth-child(9n){text-decoration:line-through}.word:nth-child(13n){color:#145744}
+.paper{position:absolute;background:#d8b640a1;mix-blend-mode:multiply;transform:rotate(-12deg)}.paper.a{top:12%;left:4%;width:20%;height:7%}.paper.b{top:56%;right:12%;width:14%;height:6%;background:#2e71548c;transform:rotate(15deg)}.paper.c{top:78%;left:-4%;width:19%;height:4%;background:#2a2929c9}
+.logo{position:relative;z-index:3;margin:0;padding-top:clamp(54px,9vh,90px);text-align:center;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:900;font-size:clamp(64px,15vw,116px);letter-spacing:-.15em;line-height:1.18;transform:rotate(-2deg);text-shadow:2px 2px 0 #0002}.logo span{display:inline-block;transform:scaleX(1.07)}
+.menu-toggle{position:absolute;right:5%;top:22px;z-index:6;background:transparent;border:0;font-size:32px;line-height:1;cursor:pointer;color:#111}
+.figure{position:relative;z-index:2;width:78%;margin:-2px 0 0 -6%;display:block;filter:drop-shadow(1px 2px 0 #241a15)}.figure svg{width:100%;height:auto;display:block}
+.links{position:absolute;z-index:4;top:39%;right:5%;width:25%;display:grid;gap:clamp(20px,4vh,44px)}.links a{font-size:clamp(15px,3.7vw,21px);font-weight:700;letter-spacing:.06em;color:#111;text-decoration:none;border-bottom:2px solid #111;padding-bottom:8px}.links a:focus-visible{outline:3px solid #a99022}
+.tagline{position:relative;z-index:4;text-align:right;padding:0 5% 48px;margin:-2% 0 0 auto;font-size:clamp(13px,3.2vw,17px);line-height:2;font-weight:700}
+@media(min-width:700px){.stage{min-height:1000px;box-shadow:0 0 50px #0001}.figure{width:68%;margin-top:15px}.links{top:41%}.tagline{margin-top:-4%}}
+@media(max-width:420px){.figure{width:89%;margin-left:-12%;margin-top:30px}.links{top:44%;right:5%;width:26%;gap:29px}.logo{padding-top:84px}.tagline{margin-top:5%;padding-bottom:55px}}
+</style></head><body><main class="stage"><div class="scribbles" id="scribbles" aria-hidden="true"></div><div class="paper a"></div><div class="paper b"></div><div class="paper c"></div><button class="menu-toggle" aria-label="メニューへ移動" onclick="document.querySelector('.links').scrollIntoView({behavior:'smooth'})">☰</button><h1 class="logo"><span>ゆうもれ</span></h1>
+<div class="figure" role="img" aria-label="緑のセーターを着た正面向きのくせ毛の人物。顔には『ゆ』の文字">
+<svg viewBox="0 0 560 730" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="knit" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M2 2l3 4-2 4M10 0L7 5l4 5" fill="none" stroke="#c4b58a" stroke-width=".8" opacity=".17"/></pattern><pattern id="hair" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M2 10q-5-12 8-8t1 12q-8 8-9-4" stroke="#201b18" stroke-width="2.6" fill="none" opacity=".7"/></pattern></defs>
+<path d="M133 424Q20 440 0 590L0 730H557L531 583Q511 450 391 426L340 399H185Z" fill="#246b50" stroke="#24201b" stroke-width="7"/><path d="M133 424Q20 440 0 590L0 730H557L531 583Q511 450 391 426L340 399H185Z" fill="url(#knit)"/>
+<path d="M174 426Q270 493 379 421" stroke="#193c31" stroke-width="9" fill="none"/><path d="M183 428q84 91 184 0" fill="none" stroke="#143d2f" stroke-width="3"/>
+<path d="M164 177Q149 112 207 78Q241 19 300 54Q361 23 404 96Q481 102 449 185Q505 248 443 300Q466 362 399 388Q364 428 318 397Q265 444 218 400Q146 418 127 354Q59 344 95 276Q50 210 164 177Z" fill="#573b2d" stroke="#231c19" stroke-width="8"/>
+<path d="M164 177Q149 112 207 78Q241 19 300 54Q361 23 404 96Q481 102 449 185Q505 248 443 300Q466 362 399 388Q364 428 318 397Q265 444 218 400Q146 418 127 354Q59 344 95 276Q50 210 164 177Z" fill="url(#hair)"/>
+<path d="M182 204Q196 150 236 157Q284 122 326 156Q384 148 405 204L411 303Q394 373 344 401Q275 434 208 391Q163 353 164 298Z" fill="#f4bf8e" stroke="#2b211c" stroke-width="7"/>
+<path d="M165 224Q130 198 155 165Q152 121 197 116Q205 75 247 98Q280 56 315 102Q369 72 390 125Q433 124 416 177Q453 208 416 239Q389 218 387 190Q365 213 345 180Q317 208 293 171Q260 211 231 185Q201 220 165 224Z" fill="#593c2d" stroke="#261d1a" stroke-width="7"/><path d="M165 224Q130 198 155 165Q152 121 197 116Q205 75 247 98Q280 56 315 102Q369 72 390 125Q433 124 416 177Q453 208 416 239Q389 218 387 190Q365 213 345 180Q317 208 293 171Q260 211 231 185Q201 220 165 224Z" fill="url(#hair)"/>
+<text x="283" y="336" text-anchor="middle" font-size="137" font-weight="900" font-family="serif" fill="#121111" transform="rotate(-7 283 290)">ゆ</text></svg></div>
+<nav class="links" aria-label="作品カテゴリー"><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></nav><p class="tagline">心の奥に埋もれた言葉も、<br>ここでなら言い漏らせそう。</p></main>
+<script>
+const texts=["ゆうもれ","言い漏らす","埋もれる","ことば","ゆ","more","まだ","でも","？","あなた","言葉","you more","忘れた","思い出す","あの","ここで","余白","きっと","声","言う","ゆうもれ","もれた","・・・","文字","かすれ","小さな声"];
+const root=document.getElementById("scribbles");let seed=197;function rand(){seed=(seed*16807)%2147483647;return seed/2147483647}
+for(let i=0;i<155;i++){const e=document.createElement("span");e.className="word";e.textContent=texts[Math.floor(rand()*texts.length)];e.style.left=(rand()*105-3)+"%";e.style.top=(rand()*95+2)+"%";e.style.setProperty("--s",(9+rand()*23)+"px");e.style.setProperty("--o",(.18+rand()*.57).toFixed(2));e.style.setProperty("--r",(-38+rand()*75)+"deg");root.appendChild(e)}
+</script></body></html>
