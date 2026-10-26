@@ -1,21 +1,31 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f1e7"><title>ゆうもれ｜手描きコラージュ</title><style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:#111;background:#f5f1e7}
-.stage{position:relative;isolation:isolate;width:min(100%,760px);min-height:100svh;margin:auto;overflow:hidden;background-color:#f5f1e7;background-image:linear-gradient(#72736b27 1px,transparent 1px),linear-gradient(90deg,#72736b27 1px,transparent 1px);background-size:39px 39px}
-.stage:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at center,transparent 25%,#e9e3d344 100%)}
-.scribbles{position:absolute;inset:0;overflow:hidden;pointer-events:none}.word{position:absolute;white-space:nowrap;color:#222;opacity:var(--o,.53);font-family:serif;font-size:var(--s,16px);transform:rotate(var(--r,0deg));letter-spacing:.06em}.word:nth-child(5n){writing-mode:vertical-rl}.word:nth-child(7n){font-weight:900}.word:nth-child(9n){text-decoration:line-through}.word:nth-child(13n){color:#145744}
-.paper{position:absolute;background:#d8b640a1;mix-blend-mode:multiply;transform:rotate(-12deg)}.paper.a{top:12%;left:4%;width:20%;height:7%}.paper.b{top:56%;right:12%;width:14%;height:6%;background:#2e71548c;transform:rotate(15deg)}.paper.c{top:78%;left:-4%;width:19%;height:4%;background:#2a2929c9}
-.logo{position:relative;z-index:3;margin:0;padding-top:clamp(54px,9vh,90px);text-align:center;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:900;font-size:clamp(64px,15vw,116px);letter-spacing:-.15em;line-height:1.18;transform:rotate(-2deg);text-shadow:2px 2px 0 #0002}.logo span{display:inline-block;transform:scaleX(1.07)}
-.menu-toggle{position:absolute;right:5%;top:22px;z-index:6;background:transparent;border:0;font-size:32px;line-height:1;cursor:pointer;color:#111}
-.figure{position:relative;z-index:2;width:78%;margin:-2px 0 0 -6%;display:block;filter:drop-shadow(1px 2px 0 #241a15)}.figure svg{width:100%;height:auto;display:block}
-.links{position:absolute;z-index:4;top:39%;right:5%;width:25%;display:grid;gap:clamp(20px,4vh,44px)}.links a{font-size:clamp(15px,3.7vw,21px);font-weight:700;letter-spacing:.06em;color:#111;text-decoration:none;border-bottom:2px solid #111;padding-bottom:8px}.links a:focus-visible{outline:3px solid #a99022}
-.tagline{position:relative;z-index:4;text-align:right;padding:0 5% 48px;margin:-2% 0 0 auto;font-size:clamp(13px,3.2vw,17px);line-height:2;font-weight:700}
-@media(min-width:700px){.stage{min-height:1000px;box-shadow:0 0 50px #0001}.figure{width:68%;margin-top:15px}.links{top:41%}.tagline{margin-top:-4%}}
-@media(max-width:420px){.figure{width:89%;margin-left:-12%;margin-top:30px}.links{top:44%;right:5%;width:26%;gap:29px}.logo{padding-top:84px}.tagline{margin-top:5%;padding-bottom:55px}}
-.figure.handdrawn{height:clamp(480px,105vw,760px);width:76%;margin:-25px 0 0 -7%;overflow:hidden;position:relative;mask-image:radial-gradient(ellipse 54% 55% at 47% 55%,#000 68%,transparent 100%)}.figure.handdrawn img{position:absolute;width:170%;max-width:none;height:auto;left:-33%;top:-30%;object-fit:cover}.stage{min-height:100svh}.links{top:44%}@media(max-width:420px){.figure.handdrawn{height:116vw;width:85%;margin-left:-10%}.figure.handdrawn img{width:190%;left:-39%;top:-25%}.links{top:48%}} </style></head><body><main class="stage"><div class="scribbles" id="scribbles" aria-hidden="true"></div><div class="paper a"></div><div class="paper b"></div><div class="paper c"></div><button class="menu-toggle" aria-label="メニューへ移動" onclick="document.querySelector('.links').scrollIntoView({behavior:'smooth'})">☰</button><h1 class="logo"><span>ゆうもれ</span></h1>
-<div class="figure handdrawn" role="img" aria-label="手描きのくせ毛の人物、顔に『ゆ』"><img src="assets/hero.png?v=20261026-handdrawn" alt="顔に『ゆ』のある手描きの人物" /></div>
-<nav class="links" aria-label="作品カテゴリー"><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></nav><p class="tagline">心の奥に埋もれた言葉も、<br>ここでなら言い漏らせそう。</p></main>
-<script>
-const texts=["ゆうもれ","言い漏らす","埋もれる","ことば","ゆ","more","まだ","でも","？","あなた","言葉","you more","忘れた","思い出す","あの","ここで","余白","きっと","声","言う","ゆうもれ","もれた","・・・","文字","かすれ","小さな声"];
-const root=document.getElementById("scribbles");let seed=197;function rand(){seed=(seed*16807)%2147483647;return seed/2147483647}
-for(let i=0;i<155;i++){const e=document.createElement("span");e.className="word";e.textContent=texts[Math.floor(rand()*texts.length)];e.style.left=(rand()*105-3)+"%";e.style.top=(rand()*95+2)+"%";e.style.setProperty("--s",(9+rand()*23)+"px");e.style.setProperty("--o",(.18+rand()*.57).toFixed(2));e.style.setProperty("--r",(-38+rand()*75)+"deg");root.appendChild(e)}
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffe9"><title>ゆうもれ</title>
+<style>
+:root{--cream:#ffffe9;--ink:#161616}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);font-family:Arial,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--ink)}a{color:inherit}
+.rose-bg{position:fixed;inset:0;z-index:-2;background:#a79b87 url("assets/rose-photo.png") center center/cover no-repeat}
+.rose-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0002,transparent 70%);pointer-events:none}
+.site{position:relative;overflow:hidden;min-height:205vh}
+.cream-top{position:absolute;top:0;left:0;right:0;height:clamp(190px,24vw,300px);background:var(--cream);clip-path:polygon(0 0,100% 0,100% 100%,0 33%);z-index:1}
+.cream-bottom{position:absolute;top:clamp(480px,68vw,800px);left:-12%;width:124%;height:clamp(220px,35vw,460px);background:var(--cream);border-radius:50% 50% 43% 55%/36% 47% 53% 52%;transform:rotate(8deg);z-index:2}
+.header{position:relative;z-index:7;display:flex;justify-content:space-between;align-items:flex-start;padding:clamp(20px,5vw,50px) clamp(25px,6vw,70px)}
+.logo{font-size:clamp(65px,13vw,155px);font-weight:900;line-height:1;letter-spacing:-.14em;text-decoration:none;white-space:nowrap}.menu{border:0;background:none;cursor:pointer;width:85px;padding:0;display:grid;gap:10px;margin-top:6px}.menu span{height:3px;background:#161616;width:100%}.menu span:nth-child(2){width:84%;justify-self:center}
+.portrait{position:absolute;z-index:3;top:clamp(190px,23vw,285px);left:7%;width:clamp(220px,36vw,430px);max-width:45%;filter:drop-shadow(0 3px 1px #0003);pointer-events:none}.portrait img{display:block;width:100%;height:auto}
+.links{position:absolute;z-index:6;left:7.5%;top:clamp(550px,65vw,780px);display:grid;gap:18px}.links a{font-family:Georgia,serif;font-size:clamp(21px,3vw,35px);text-underline-offset:4px}
+.dot{position:absolute;z-index:5;background:red;border-radius:50%;pointer-events:none}.dot.one{top:clamp(430px,48vw,570px);left:34%;width:clamp(145px,26vw,260px);aspect-ratio:1}.dot.two{top:clamp(840px,95vw,1120px);left:10%;width:clamp(90px,14vw,145px);aspect-ratio:1}
+.next{position:relative;z-index:3;margin-top:115vh;padding:30vh 8% 24vh;background:linear-gradient(transparent,#ffffe9 25%);min-height:95vh}.next h2{font-size:clamp(48px,10vw,120px);margin:0 0 30px}.next p{font-size:17px;line-height:2}.next a{display:inline-block;margin:20px 25px 0 0}
+[data-speed]{will-change:transform}
+@media(max-width:650px){.site{min-height:190vh}.cream-top{height:210px;clip-path:polygon(0 0,100% 0,100% 100%,0 52%)}.header{padding:40px 6%}.logo{font-size:clamp(58px,13vw,90px)}.menu{width:45px;gap:7px}.menu span{height:2px}.portrait{top:205px;left:8%;max-width:none;width:43%}.dot.one{top:390px;left:36%;width:25vw}.links{top:555px;left:8%}.links a{font-size:23px}.cream-bottom{top:630px;height:220px}.dot.two{top:780px}.next{margin-top:105vh}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-speed]{will-change:auto}}
+</style></head>
+<body><div class="rose-bg" aria-hidden="true"></div><main class="site">
+<div class="cream-top" data-speed=".12"></div>
+<header class="header"><a class="logo" href="index.html" aria-label="ゆうもれ ホーム">ゆうもれ</a><button class="menu" aria-label="メニュー" aria-controls="category-links" aria-expanded="false"><span></span><span></span><span></span></button></header>
+<div class="portrait" data-speed=".22"><img src="assets/character.png" onerror="this.onerror=null;this.src='assets/hero.png'" alt="顔に『ゆ』のある人物のイラスト"></div>
+<div class="dot one" data-speed="-.14"></div>
+<nav id="category-links" class="links" aria-label="カテゴリー"><a href="blog.html">Link1</a><a href="photo.html">Link2</a><a href="illustration.html">Link3</a></nav>
+<div class="cream-bottom" data-speed=".08"></div><div class="dot two" data-speed="-.22"></div>
+<section class="next" id="more"><h2>ゆうもれ</h2><p>ことばも、写真も、イラストも、音楽も。<br>ここに、すこしずつ。</p><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></section>
+</main><script>
+const layers=[...document.querySelectorAll('[data-speed]')];let ticking=false;function update(){const y=window.scrollY;for(const el of layers)el.style.transform='translate3d(0,'+(y*Number(el.dataset.speed))+'px,0)';ticking=false}if(!matchMedia('(prefers-reduced-motion: reduce)').matches){addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update()}
+document.querySelector('.menu').addEventListener('click',e=>{document.getElementById('category-links').scrollIntoView({behavior:'smooth',block:'center'});e.currentTarget.setAttribute('aria-expanded','true')});
 </script></body></html>
