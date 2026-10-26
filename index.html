@@ -1,31 +1,35 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffe9"><title>ゆうもれ</title>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffe9"><meta name="description" content="ゆうもれ。ことばも、写真も、イラストも、音楽も。ここに、すこしずつ。"><title>ゆうもれ</title>
 <style>
-:root{--cream:#ffffe9;--ink:#161616}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);font-family:Arial,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--ink)}a{color:inherit}
-.rose-bg{position:fixed;inset:0;z-index:-2;background:#a79b87 url("assets/rose-photo.png") center center/cover no-repeat}
-.rose-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0002,transparent 70%);pointer-events:none}
-.site{position:relative;overflow:hidden;min-height:205vh}
-.cream-top{position:absolute;top:0;left:0;right:0;height:clamp(190px,24vw,300px);background:var(--cream);clip-path:polygon(0 0,100% 0,100% 100%,0 33%);z-index:1}
-.cream-bottom{position:absolute;top:clamp(480px,68vw,800px);left:-12%;width:124%;height:clamp(220px,35vw,460px);background:var(--cream);border-radius:50% 50% 43% 55%/36% 47% 53% 52%;transform:rotate(8deg);z-index:2}
-.header{position:relative;z-index:7;display:flex;justify-content:space-between;align-items:flex-start;padding:clamp(20px,5vw,50px) clamp(25px,6vw,70px)}
-.logo{font-size:clamp(65px,13vw,155px);font-weight:900;line-height:1;letter-spacing:-.14em;text-decoration:none;white-space:nowrap}.menu{border:0;background:none;cursor:pointer;width:85px;padding:0;display:grid;gap:10px;margin-top:6px}.menu span{height:3px;background:#161616;width:100%}.menu span:nth-child(2){width:84%;justify-self:center}
-.portrait{position:absolute;z-index:3;top:clamp(190px,23vw,285px);left:7%;width:clamp(220px,36vw,430px);max-width:45%;filter:drop-shadow(0 3px 1px #0003);pointer-events:none}.portrait img{display:block;width:100%;height:auto}
-.links{position:absolute;z-index:6;left:7.5%;top:clamp(550px,65vw,780px);display:grid;gap:18px}.links a{font-family:Georgia,serif;font-size:clamp(21px,3vw,35px);text-underline-offset:4px}
-.dot{position:absolute;z-index:5;background:red;border-radius:50%;pointer-events:none}.dot.one{top:clamp(430px,48vw,570px);left:34%;width:clamp(145px,26vw,260px);aspect-ratio:1}.dot.two{top:clamp(840px,95vw,1120px);left:10%;width:clamp(90px,14vw,145px);aspect-ratio:1}
-.next{position:relative;z-index:3;margin-top:115vh;padding:30vh 8% 24vh;background:linear-gradient(transparent,#ffffe9 25%);min-height:95vh}.next h2{font-size:clamp(48px,10vw,120px);margin:0 0 30px}.next p{font-size:17px;line-height:2}.next a{display:inline-block;margin:20px 25px 0 0}
-[data-speed]{will-change:transform}
-@media(max-width:650px){.site{min-height:190vh}.cream-top{height:210px;clip-path:polygon(0 0,100% 0,100% 100%,0 52%)}.header{padding:40px 6%}.logo{font-size:clamp(58px,13vw,90px)}.menu{width:45px;gap:7px}.menu span{height:2px}.portrait{top:205px;left:8%;max-width:none;width:43%}.dot.one{top:390px;left:36%;width:25vw}.links{top:555px;left:8%}.links a{font-size:23px}.cream-bottom{top:630px;height:220px}.dot.two{top:780px}.next{margin-top:105vh}}
+:root{--cream:#ffffe9;--ink:#20211d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}a{color:inherit}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid #b82a20;outline-offset:8px}.skip{position:fixed;top:-100px;left:16px;z-index:30;background:var(--cream);padding:12px}.skip:focus{top:16px}
+.rose-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:#a79b87 url('assets/rose-photo.png?v=20261026') 60% center/cover no-repeat}
+.site{position:relative;z-index:1;overflow:hidden}.hero{position:relative;height:max(680px,106vw);max-height:1400px;isolation:isolate}.cream{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;fill:var(--cream)}.cream-top{z-index:1}.cream-bottom{z-index:3}.header{position:absolute;inset:0 0 auto;z-index:7;display:flex;align-items:flex-start;justify-content:space-between;padding:4.8% 4.5%}.logo{font-size:clamp(64px,16vw,230px);font-weight:900;line-height:1.06;letter-spacing:-.1em;text-decoration:none;white-space:nowrap}.menu{margin-top:0;width:10%;max-width:100px;min-width:44px;height:64px;padding:8px 0;border:0;background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.menu span{height:3px;width:100%;background:var(--ink)}.menu span:nth-child(2){width:74%;align-self:center}
+.portrait{position:absolute;z-index:2;left:4%;top:20%;width:43%;pointer-events:none}.portrait img{display:block;width:100%;height:auto}.dot{position:absolute;z-index:4;background:#ff0800;border-radius:50%;aspect-ratio:1;pointer-events:none}.dot.one{top:50.5%;left:33.3%;width:26%}.dot.two{top:84.5%;left:10.8%;width:14%}.links{position:absolute;z-index:6;top:61%;left:7.6%;display:grid;gap:14px}.links a{font-family:Georgia,serif;font-size:clamp(18px,2.8vw,36px);text-underline-offset:5px;text-decoration-thickness:1px;width:fit-content}.links a:hover{color:#b82a20}
+.next{position:relative;z-index:5;margin-top:8vw;padding:100px 8% 120px;background:var(--cream)}.next h2{font-size:clamp(48px,8vw,110px);letter-spacing:-.08em;margin:0 0 28px}.next p{font-size:17px;line-height:2}.next nav{display:flex;flex-wrap:wrap;gap:24px;margin-top:35px}.next a{text-underline-offset:5px}.footer{margin-top:90px;font-size:12px}
+.menu-panel{position:fixed;inset:0;z-index:20;border:0;margin:auto;padding:80px 10%;width:min(600px,90vw);background:var(--cream);color:var(--ink)}.menu-panel::backdrop{background:#18181099}.menu-panel nav{display:grid;gap:26px}.menu-panel a{font-size:32px;text-underline-offset:7px}.close-menu{position:absolute;top:20px;right:24px;border:0;background:transparent;cursor:pointer;padding:12px;font-size:18px}[data-speed]{will-change:transform}
+@media(max-width:600px){.hero{height:max(640px,130vw)}.header{padding:7% 5%}.logo{font-size:16vw}.menu{height:37px;padding:2px 0}.menu span{height:2px}.portrait{top:21%;left:1%;width:52%}.dot.one{top:51%;left:34%;width:27%}.links{top:61%;gap:13px}.links a{font-size:21px}.dot.two{top:87%;width:15%}.rose-bg{background-position:62% center}.next{padding:72px 8% 80px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-speed]{will-change:auto}}
-</style></head>
-<body><div class="rose-bg" aria-hidden="true"></div><main class="site">
-<div class="cream-top" data-speed=".12"></div>
-<header class="header"><a class="logo" href="index.html" aria-label="ゆうもれ ホーム">ゆうもれ</a><button class="menu" aria-label="メニュー" aria-controls="category-links" aria-expanded="false"><span></span><span></span><span></span></button></header>
-<div class="portrait" data-speed=".22"><img src="assets/character.png" onerror="this.onerror=null;this.src='assets/hero.png'" alt="顔に『ゆ』のある人物のイラスト"></div>
-<div class="dot one" data-speed="-.14"></div>
-<nav id="category-links" class="links" aria-label="カテゴリー"><a href="blog.html">Link1</a><a href="photo.html">Link2</a><a href="illustration.html">Link3</a></nav>
-<div class="cream-bottom" data-speed=".08"></div><div class="dot two" data-speed="-.22"></div>
-<section class="next" id="more"><h2>ゆうもれ</h2><p>ことばも、写真も、イラストも、音楽も。<br>ここに、すこしずつ。</p><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></section>
-</main><script>
-const layers=[...document.querySelectorAll('[data-speed]')];let ticking=false;function update(){const y=window.scrollY;for(const el of layers)el.style.transform='translate3d(0,'+(y*Number(el.dataset.speed))+'px,0)';ticking=false}if(!matchMedia('(prefers-reduced-motion: reduce)').matches){addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update()}
-document.querySelector('.menu').addEventListener('click',e=>{document.getElementById('category-links').scrollIntoView({behavior:'smooth',block:'center'});e.currentTarget.setAttribute('aria-expanded','true')});
+</style>
+</head>
+<body>
+<a class="skip" href="#category-links">カテゴリーへ</a><div class="rose-bg" aria-hidden="true"></div>
+<main class="site"><section class="hero" aria-label="ゆうもれ">
+<svg class="cream cream-top" viewBox="0 0 1000 1060" preserveAspectRatio="none" aria-hidden="true" data-speed=".08"><path d="M0 0H1000V495C790 325 420 225 0 120Z"/></svg>
+<header class="header"><a class="logo" href="index.html" aria-label="ゆうもれ ホーム">ゆうもれ</a><button class="menu" aria-label="メニューを開く" aria-controls="menu-panel" aria-expanded="false"><span></span><span></span><span></span></button></header>
+<div class="portrait" data-speed=".20"><img src="assets/character.png?v=20261026" alt="顔に『ゆ』のある人物のイラスト" width="1230" height="1278" fetchpriority="high"></div>
+<svg class="cream cream-bottom" viewBox="0 0 1000 1060" preserveAspectRatio="none" aria-hidden="true" data-speed=".06"><path d="M0 495C230 630 810 950 1000 800V1010C640 1050 110 1030 0 865Z"/></svg>
+<div class="dot one" data-speed="-.13" aria-hidden="true"></div>
+<nav id="category-links" class="links" aria-label="カテゴリー"><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></nav>
+<div class="dot two" data-speed="-.20" aria-hidden="true"></div>
+</section>
+<section class="next" id="more"><h2>ゆうもれ</h2><p>ことばも、写真も、イラストも、音楽も。<br>ここに、すこしずつ。</p><nav aria-label="作品一覧"><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></nav><footer class="footer">© ゆうもれ</footer></section></main>
+<dialog id="menu-panel" class="menu-panel" aria-label="メニュー"><button class="close-menu" autofocus>閉じる ×</button><nav aria-label="メインメニュー"><a href="blog.html">BLOG</a><a href="photo.html">PHOTO</a><a href="illustration.html">ILLUST</a><a href="music.html">MUSIC</a></nav></dialog>
+<script>
+const layers=[...document.querySelectorAll('[data-speed]')],motion=matchMedia('(prefers-reduced-motion: reduce)');let ticking=false;
+function update(){const y=motion.matches?0:Math.min(window.scrollY,document.querySelector('.hero').offsetHeight);for(const el of layers)el.style.transform=`translate3d(0,${y*Number(el.dataset.speed)}px,0)`;ticking=false}
+function schedule(){if(!ticking){ticking=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);motion.addEventListener('change',schedule);update();
+const menu=document.querySelector('.menu'),panel=document.querySelector('.menu-panel');menu.addEventListener('click',()=>{panel.showModal();menu.setAttribute('aria-expanded','true')});document.querySelector('.close-menu').addEventListener('click',()=>panel.close());panel.addEventListener('close',()=>{menu.setAttribute('aria-expanded','false');menu.focus()});panel.addEventListener('click',e=>{if(e.target===panel){const r=panel.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)panel.close()}});
 </script></body></html>
