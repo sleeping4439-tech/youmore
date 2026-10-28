@@ -21,3 +21,8 @@
 
 /* Enlarge the supplied logo by five percent around its existing top-left position. */
 .hero h1{transform:scale(1.05);transform-origin:top left}
+
+/* Long scroll guide and six-line placeholder copy in the MV. */
+.scroll-cue{top:81%;bottom:auto;height:calc(17% + var(--mv-extra)*.7)}
+.mv-copy{position:absolute;z-index:3;left:8%;top:calc(81% + 20px);width:32%;height:calc(17% + var(--mv-extra)*.45);margin:0;display:flex;flex-direction:column;justify-content:space-between;font-size:clamp(12px,3.2vw,46px);font-weight:300;line-height:1.6;letter-spacing:.04em}
+.mv-copy span{display:block;white-space:nowrap}
