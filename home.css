@@ -48,7 +48,7 @@
 @keyframes ym-red-enter{from{transform:translateX(105%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.hero .red-panel{animation:none}}
 
-/* Right-side black rectangle: gentle downward fade-in, once. */
-.hero .black-panel{animation:ym-black-enter .85s ease-out .2s both}
-@keyframes ym-black-enter{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+/* Right-side black rectangle rises from the red 01 section below, without fading. */
+.hero .black-panel{animation:ym-black-enter 1.05s cubic-bezier(.22,1,.36,1) .2s both}
+@keyframes ym-black-enter{from{transform:translateY(115%)}to{transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.hero .black-panel{animation:none}}
