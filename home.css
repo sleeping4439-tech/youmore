@@ -45,9 +45,9 @@
 
 /* Print-registration style: small offset snaps into the existing position. */
 .hero .red-panel,.hero .black-panel,.hero .gray-panel{opacity:0}
-.hero.panels-ready .red-panel{animation:ym-red-align .42s cubic-bezier(.2,.9,.2,1) 1.0s both}
-.hero.panels-ready .black-panel{animation:ym-black-align .42s cubic-bezier(.2,.9,.2,1) 1.12s both}
-.hero.panels-ready .gray-panel{animation:ym-gray-align .42s cubic-bezier(.2,.9,.2,1) 1.24s both}
+.hero.panels-ready .red-panel{animation:ym-red-align .42s cubic-bezier(.2,.9,.2,1) .9s both}
+.hero.panels-ready .black-panel{animation:ym-black-align .42s cubic-bezier(.2,.9,.2,1) 1.02s both}
+.hero.panels-ready .gray-panel{animation:ym-gray-align .42s cubic-bezier(.2,.9,.2,1) 1.14s both}
 @keyframes ym-red-align{from{opacity:0;transform:translate(9px,-5px)}to{opacity:1;transform:translate(0,0)}}
 @keyframes ym-black-align{from{opacity:0;transform:translate(6px,9px)}to{opacity:1;transform:translate(0,0)}}
 @keyframes ym-gray-align{from{opacity:0;transform:translate(-7px,6px)}to{opacity:1;transform:translate(0,0)}}
