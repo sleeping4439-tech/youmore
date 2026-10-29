@@ -57,3 +57,9 @@
 .mv-copy .poem-char{display:inline;opacity:0;transition:opacity .3s ease-out}
 .mv-copy .poem-char.is-visible{opacity:1}
 @media(prefers-reduced-motion:reduce){.mv-copy .poem-char{opacity:1;transition:none}}
+
+/* Scroll cue: plain vertical line; red droplet below the line at the annotated location. */
+.scroll-cue:after{content:none}
+.scroll-cue span{top:100%;left:calc(50% - 5px);color:var(--red);animation:ym-scroll-drop 1.7s ease-in-out infinite}
+@keyframes ym-scroll-drop{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){.scroll-cue span{animation:none}}
