@@ -38,3 +38,7 @@
 .scroll-cue span{left:calc(50% - 5px);width:10px;height:14px;border:0;border-radius:0;background:none;color:var(--gold)}
 .scroll-cue span svg{display:block;width:100%;height:100%}
 @media(prefers-reduced-motion:reduce){.hero h1 .logo-reveal,.hero h1.logo-ready .logo-reveal{animation:none;opacity:1}.hero h1 .logo-drop,.hero h1.logo-ready .logo-drop{animation:none;opacity:1;transform:none}}
+
+/* MV poem only: muted gray Gothic, equal visual line widths. */
+.mv-copy{color:#85817f;font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:clamp(12px,2.85vw,41px);font-weight:400;letter-spacing:0;width:35%;height:calc(17% + var(--mv-extra)*.37)}
+.mv-copy span{width:100%;text-align:justify;text-align-last:justify;white-space:nowrap}
