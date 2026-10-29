@@ -43,14 +43,14 @@
 .mv-copy{color:#85817f;font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:clamp(12px,2.85vw,41px);font-weight:400;letter-spacing:0;width:35%;height:calc(17% + var(--mv-extra)*.37)}
 .mv-copy span{width:100%;text-align:justify;text-align-last:justify;white-space:nowrap}
 
-/* Right-top red rectangle enters from the right, then remains in place. */
-.hero .red-panel{animation:ym-red-enter .9s cubic-bezier(.22,1,.36,1) .15s both}
-@keyframes ym-red-enter{from{transform:translateX(105%)}to{transform:translateX(0)}}
+/* Right-top red rectangle appears instantly in place. */
+.hero .red-panel{animation:ym-red-enter .01s steps(1,end) .15s both}
+@keyframes ym-red-enter{from{visibility:hidden}to{visibility:visible}}
 @media(prefers-reduced-motion:reduce){.hero .red-panel{animation:none}}
 
-/* Right-side black rectangle rises from the red 01 section below, without fading. */
-.hero .black-panel{animation:ym-black-enter 1.05s cubic-bezier(.22,1,.36,1) .2s both}
-@keyframes ym-black-enter{from{transform:translateY(115%)}to{transform:translateY(0)}}
+/* Right-side black rectangle appears instantly in place. */
+.hero .black-panel{animation:ym-black-enter .01s steps(1,end) .2s both}
+@keyframes ym-black-enter{from{visibility:hidden}to{visibility:visible}}
 @media(prefers-reduced-motion:reduce){.hero .black-panel{animation:none}}
 
 /* Gray rectangle appears instantly in its original position, once. */
