@@ -54,6 +54,6 @@
 @media(prefers-reduced-motion:reduce){.hero .red-panel,.hero .black-panel,.hero .gray-panel{animation:none;opacity:1}}
 
 /* Character-by-character reveal: preserve the poem's existing typography and layout. */
-.mv-copy .poem-char{display:inline;visibility:hidden}
-.mv-copy .poem-char.is-visible{visibility:visible}
-@media(prefers-reduced-motion:reduce){.mv-copy .poem-char{visibility:visible}}
+.mv-copy .poem-char{display:inline;opacity:0;transition:opacity .3s ease-out}
+.mv-copy .poem-char.is-visible{opacity:1}
+@media(prefers-reduced-motion:reduce){.mv-copy .poem-char{opacity:1;transition:none}}
