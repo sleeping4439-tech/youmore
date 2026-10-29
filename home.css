@@ -52,3 +52,8 @@
 .hero .black-panel{animation:ym-black-enter 1.05s cubic-bezier(.22,1,.36,1) .2s both}
 @keyframes ym-black-enter{from{transform:translateY(115%)}to{transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.hero .black-panel{animation:none}}
+
+/* Gray rectangle enters horizontally from the right, once. */
+.hero .gray-panel{animation:ym-gray-enter .9s cubic-bezier(.22,1,.36,1) .25s both}
+@keyframes ym-gray-enter{from{transform:translateX(450%)}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.hero .gray-panel{animation:none}}
