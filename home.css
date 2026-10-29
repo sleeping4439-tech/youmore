@@ -52,3 +52,8 @@
 @keyframes ym-black-align{from{opacity:0;transform:translate(6px,9px)}to{opacity:1;transform:translate(0,0)}}
 @keyframes ym-gray-align{from{opacity:0;transform:translate(-7px,6px)}to{opacity:1;transform:translate(0,0)}}
 @media(prefers-reduced-motion:reduce){.hero .red-panel,.hero .black-panel,.hero .gray-panel{animation:none;opacity:1}}
+
+/* Character-by-character reveal: preserve the poem's existing typography and layout. */
+.mv-copy .poem-char{display:inline;visibility:hidden}
+.mv-copy .poem-char.is-visible{visibility:visible}
+@media(prefers-reduced-motion:reduce){.mv-copy .poem-char{visibility:visible}}
