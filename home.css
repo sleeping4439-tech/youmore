@@ -63,3 +63,7 @@
 .scroll-cue span{top:100%;left:calc(50% - 5px);color:var(--red);animation:ym-scroll-drop 1.7s ease-in-out infinite}
 @keyframes ym-scroll-drop{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
 @media(prefers-reduced-motion:reduce){.scroll-cue span{animation:none}}
+
+/* 01 ESSAY: flat vector artwork on the right, without changing the left typography. */
+.essay .art{width:49%;right:0;bottom:0;max-height:100%;object-fit:contain;object-position:right bottom;mask-image:none;clip-path:none}
+@media(max-width:700px){.essay .art{width:55%;}}
