@@ -47,3 +47,8 @@
 .hero .red-panel{animation:ym-red-enter .9s cubic-bezier(.22,1,.36,1) .15s both}
 @keyframes ym-red-enter{from{transform:translateX(105%)}to{transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.hero .red-panel{animation:none}}
+
+/* Right-side black rectangle: gentle downward fade-in, once. */
+.hero .black-panel{animation:ym-black-enter .85s ease-out .2s both}
+@keyframes ym-black-enter{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.hero .black-panel{animation:none}}
