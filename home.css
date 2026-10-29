@@ -43,9 +43,7 @@
 .mv-copy{color:#85817f;font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:clamp(12px,2.85vw,41px);font-weight:400;letter-spacing:0;width:35%;height:calc(17% + var(--mv-extra)*.37)}
 .mv-copy span{width:100%;text-align:justify;text-align-last:justify;white-space:nowrap}
 
-/* Quiet, asynchronous motion for the right-side geometric objects only. */
-.hero .red-panel{animation:ym-red-drift 9s ease-in-out infinite;will-change:transform}
-.hero .black-panel{animation:ym-black-drift 12s ease-in-out infinite;transform-origin:50% 20%;will-change:transform}
-@keyframes ym-red-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-@keyframes ym-black-drift{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
-@media(prefers-reduced-motion:reduce){.hero .red-panel,.hero .black-panel{animation:none;will-change:auto}}
+/* Right-top red rectangle enters from the right, then remains in place. */
+.hero .red-panel{animation:ym-red-enter .9s cubic-bezier(.22,1,.36,1) .15s both}
+@keyframes ym-red-enter{from{transform:translateX(105%)}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.hero .red-panel{animation:none}}
