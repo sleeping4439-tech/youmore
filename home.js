@@ -3,3 +3,6 @@
 
 /* Start the right-side composition only after the logo has finished revealing. */
 (()=>{const hero=document.querySelector('.hero'),logo=document.querySelector('.logo-reveal');if(!hero||!logo)return;const show=()=>hero.classList.add('panels-ready');if(matchMedia('(prefers-reduced-motion: reduce)').matches){show();return}logo.addEventListener('animationend',e=>{if(e.animationName==='logo-letter-reveal')show()},{once:true});})();
+
+/* Randomly reveal individual poem characters without altering their positions. */
+(()=>{const poem=document.querySelector('.mv-copy');if(!poem)return;const chars=[];for(const line of poem.querySelectorAll(':scope > span')){const original=line.textContent;line.setAttribute('aria-label',original);line.textContent='';for(const character of Array.from(original)){const span=document.createElement('span');span.className='poem-char';span.setAttribute('aria-hidden','true');span.textContent=character;line.appendChild(span);chars.push(span)}}if(matchMedia('(prefers-reduced-motion: reduce)').matches){chars.forEach(char=>char.classList.add('is-visible'));return}for(let i=chars.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[chars[i],chars[j]]=[chars[j],chars[i]]}chars.forEach((char,i)=>setTimeout(()=>char.classList.add('is-visible'),300+i*27+Math.random()*90))})();
