@@ -146,3 +146,7 @@
 
 /* Splash droplets only: remove crown outline and keep scattered red droplets. */
 .essay .ym-crown path{display:none}
+
+/* Splash refinement: 6px lower, with a gentler/slower upward rise. */
+.essay .ym-crown{top:1px}
+@keyframes ym-crown-pop{0%,75%{opacity:0;transform:translate(-50%,-30%) scale(.2)}80%{opacity:1;transform:translate(-50%,-62%) scale(.8)}89%{opacity:1;transform:translate(-50%,-100%) scale(1.15)}95%{opacity:.4;transform:translate(-50%,-120%) scale(1.28)}99%,100%{opacity:0;transform:translate(-50%,-130%) scale(1.35)}}
