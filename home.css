@@ -74,3 +74,7 @@
 /* Keep a focus cue on the label, not a rectangle across the color field. */
 .essay:focus-visible{outline:none}
 .essay:focus-visible h2{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em}
+
+/* Approved 02/03 artwork placement in the extended color fields. */
+.visualize .art,.about .art{z-index:1;right:0;bottom:-330px;width:48%;height:auto;max-height:calc(100% + 280px);object-fit:contain;object-position:right bottom;mask-image:none;clip-path:none}
+@media(max-width:700px){.visualize .art,.about .art{width:94%;max-height:calc(100% + 320px)}}
