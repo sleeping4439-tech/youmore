@@ -182,3 +182,8 @@
 .hero.panels-ready .red-panel{animation-delay:.3s}
 .hero.panels-ready .black-panel{animation-delay:.42s}
 .hero.panels-ready .gray-panel{animation-delay:.54s}
+
+/* Move right-hand panels another 0.2s earlier. */
+.hero.panels-ready .red-panel{animation-delay:.1s}
+.hero.panels-ready .black-panel{animation-delay:.22s}
+.hero.panels-ready .gray-panel{animation-delay:.34s}
