@@ -110,3 +110,11 @@
 .section h2::before{content:"";position:absolute;right:0;bottom:0;width:8px;height:8px;border-right:1px solid currentColor;border-top:1px solid currentColor;transform:translateY(-2px) rotate(45deg)}
 .section h2{position:absolute}
 @media(hover:hover){.section:hover h2::after{background-size:100% 2px}.section:hover h2{opacity:.82}}
+
+/* Start right-hand panels 0.2s sooner; run the droplet only after all three finish. */
+.hero.panels-ready .red-panel{animation-delay:.5s}
+.hero.panels-ready .black-panel{animation-delay:.62s}
+.hero.panels-ready .gray-panel{animation-delay:.74s}
+.scroll-cue span{animation:none}
+.hero.panels-finished .scroll-cue span{animation:ym-droplet-fall 1.6s cubic-bezier(.35,0,.8,.75) infinite}
+@media(prefers-reduced-motion:reduce){.hero.panels-finished .scroll-cue span{animation:none}}
