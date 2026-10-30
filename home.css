@@ -93,3 +93,8 @@
 .scroll-cue:before{height:90%}
 .scroll-cue:after{top:90%;height:calc(var(--ym-drop-distance,300px) + 10px)}
 .scroll-cue span{top:90%}
+
+/* Guide: original solid length, only a short 10px dotted extension; leave gap to 01. */
+.scroll-cue:before{height:90%}
+.scroll-cue:after{top:90%;height:10px;background:repeating-linear-gradient(to bottom,#777 0 2px,transparent 2px 5px)}
+.scroll-cue span{top:calc(90% + 10px)}
