@@ -78,3 +78,8 @@
 /* Approved 02/03 artwork placement in the extended color fields. */
 .visualize .art,.about .art{z-index:1;right:0;bottom:-330px;width:48%;height:auto;max-height:calc(100% + 280px);object-fit:contain;object-position:right bottom;mask-image:none;clip-path:none}
 @media(max-width:700px){.visualize .art,.about .art{width:94%;max-height:calc(100% + 320px)}}
+
+/* Scroll droplet: release at the guide line's tip, fall to 01's red field, then vanish. */
+.scroll-cue span{top:90%;animation:ym-droplet-fall 3.2s cubic-bezier(.35,0,.8,.75) infinite;will-change:transform,opacity}
+@keyframes ym-droplet-fall{0%,8%{transform:translateY(0);opacity:1}76%{transform:translateY(var(--ym-drop-distance,300px));opacity:1}81%,100%{transform:translateY(var(--ym-drop-distance,300px));opacity:0}}
+@media(prefers-reduced-motion:reduce){.scroll-cue span{animation:none;opacity:1}}
