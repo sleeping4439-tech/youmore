@@ -154,3 +154,6 @@
 /* 1.5x faster falling droplet; keep impact ripple and splash synchronized. */
 .hero.panels-finished .scroll-cue span{animation-duration:1.0667s}
 .hero.panels-finished + .essay::before,.hero.panels-finished + .essay .ym-crown{animation-duration:1.0667s}
+
+/* Splash: half the horizontal spread, six droplets. */
+.essay .ym-crown{width:27px}
