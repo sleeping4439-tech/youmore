@@ -102,3 +102,11 @@
 /* Extend the dotted tip 6px upward, keeping its lower end and droplet start fixed. */
 .scroll-cue:before{height:calc(90% - 6px)}
 .scroll-cue:after{top:calc(90% - 6px);height:16px}
+
+/* Scroll guide dotted tip uses the same black as the solid rule. */
+.scroll-cue:after{background:repeating-linear-gradient(to bottom,#111 0 2px,transparent 2px 5px)}
+/* Long underline-arrow beneath the three section headings: visual link affordance. */
+.section h2::after{content:"";display:block;width:100%;height:12px;margin-top:12px;background:linear-gradient(currentColor,currentColor) left 50% / calc(100% - 1px) 1px no-repeat;clip-path:none}
+.section h2::before{content:"";position:absolute;right:0;bottom:0;width:8px;height:8px;border-right:1px solid currentColor;border-top:1px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.section h2{position:absolute}
+@media(hover:hover){.section:hover h2::after{background-size:100% 2px}.section:hover h2{opacity:.82}}
