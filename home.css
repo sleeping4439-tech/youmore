@@ -177,3 +177,8 @@
 
 /* Remove impact ripple; preserve droplet and splash animations. */
 .essay::before,.hero.panels-finished + .essay::before{content:none!important;animation:none!important}
+
+/* Reveal the three right-hand panels 0.2s earlier. */
+.hero.panels-ready .red-panel{animation-delay:.3s}
+.hero.panels-ready .black-panel{animation-delay:.42s}
+.hero.panels-ready .gray-panel{animation-delay:.54s}
