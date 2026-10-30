@@ -83,3 +83,8 @@
 .scroll-cue span{top:90%;animation:ym-droplet-fall 3.2s cubic-bezier(.35,0,.8,.75) infinite;will-change:transform,opacity}
 @keyframes ym-droplet-fall{0%,8%{transform:translateY(0);opacity:1}76%{transform:translateY(var(--ym-drop-distance,300px));opacity:1}81%,100%{transform:translateY(var(--ym-drop-distance,300px));opacity:0}}
 @media(prefers-reduced-motion:reduce){.scroll-cue span{animation:none;opacity:1}}
+
+/* 2026-10-30: extend solid guide 10px; dotted continuation; double fall speed. */
+.scroll-cue:before{height:calc(90% + 10px)}
+.scroll-cue:after{content:"";position:absolute;left:50%;top:calc(90% + 10px);bottom:auto;width:1px;height:var(--ym-drop-distance,300px);border:0;transform:none;background:repeating-linear-gradient(to bottom,#777 0 3px,transparent 3px 9px);pointer-events:none}
+.scroll-cue span{top:calc(90% + 10px);z-index:1;animation-duration:1.6s}
