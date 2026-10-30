@@ -118,3 +118,9 @@
 .scroll-cue span{animation:none}
 .hero.panels-finished .scroll-cue span{animation:ym-droplet-fall 1.6s cubic-bezier(.35,0,.8,.75) infinite}
 @media(prefers-reduced-motion:reduce){.hero.panels-finished .scroll-cue span{animation:none}}
+
+/* A restrained water ripple where the red drop meets section 01. */
+.essay::before{content:"";position:absolute;z-index:5;pointer-events:none;left:var(--ym-impact-x,45%);top:0;width:30px;height:9px;border:1.5px solid #f7ded7;border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.2)}
+.hero.panels-finished + .essay::before{animation:ym-impact-ripple 1.6s linear infinite}
+@keyframes ym-impact-ripple{0%,75%{opacity:0;transform:translate(-50%,-50%) scale(.2)}76%{opacity:.85;transform:translate(-50%,-50%) scale(.25)}88%{opacity:.55;transform:translate(-50%,-50%) scale(1.3)}98%,100%{opacity:0;transform:translate(-50%,-50%) scale(1.9)}}
+@media(prefers-reduced-motion:reduce){.hero.panels-finished + .essay::before{animation:none;opacity:0}}
