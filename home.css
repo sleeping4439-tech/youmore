@@ -98,3 +98,7 @@
 .scroll-cue:before{height:90%}
 .scroll-cue:after{top:90%;height:10px;background:repeating-linear-gradient(to bottom,#777 0 2px,transparent 2px 5px)}
 .scroll-cue span{top:calc(90% + 10px)}
+
+/* Extend the dotted tip 6px upward, keeping its lower end and droplet start fixed. */
+.scroll-cue:before{height:calc(90% - 6px)}
+.scroll-cue:after{top:calc(90% - 6px);height:16px}
