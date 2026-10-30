@@ -9,3 +9,6 @@
 
 /* Measure the gap from the guide tip to the top edge of section 01. */
 (()=>{const cue=document.querySelector('.scroll-cue'),drop=cue?.querySelector('span'),essay=document.querySelector('#essay');if(!cue||!drop||!essay)return;const measure=()=>{const lineTip=cue.getBoundingClientRect().top+cue.getBoundingClientRect().height*.9+10;const redTop=essay.getBoundingClientRect().top;{const distance=Math.max(0,redTop-lineTip+12)+'px';drop.style.setProperty('--ym-drop-distance',distance);cue.style.setProperty('--ym-drop-distance',distance)}};measure();window.addEventListener('resize',measure,{passive:true});})();
+
+/* Begin the scroll droplet after the last (gray) panel's entrance ends. */
+(()=>{const hero=document.querySelector('.hero'),gray=hero?.querySelector('.gray-panel');if(!hero||!gray)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches){hero.classList.add('panels-finished');return}gray.addEventListener('animationend',event=>{if(event.animationName==='ym-gray-align')hero.classList.add('panels-finished')});})();
