@@ -12,3 +12,6 @@
 
 /* Begin the scroll droplet after the last (gray) panel's entrance ends. */
 (()=>{const hero=document.querySelector('.hero'),gray=hero?.querySelector('.gray-panel');if(!hero||!gray)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches){hero.classList.add('panels-finished');return}gray.addEventListener('animationend',event=>{if(event.animationName==='ym-gray-align')hero.classList.add('panels-finished')});})();
+
+/* Reveal each section's typography and illustration on scroll, once per visit. */
+(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const sections=[...document.querySelectorAll('.section.essay,.section.visualize,.section.about')];if(!sections.length)return;const reveal=section=>{if(section.dataset.ymScrollShown)return;section.dataset.ymScrollShown='1';const text=[...section.querySelectorAll('.number,.kanji,h2,.rule')],art=section.querySelector('.art');text.forEach((el,i)=>setTimeout(()=>el.classList.add('ym-revealed'),i*110));if(art)setTimeout(()=>art.classList.add('ym-revealed'),260)};if(!('IntersectionObserver'in window)){sections.forEach(reveal);return}const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){reveal(entry.target);observer.unobserve(entry.target)}}},{rootMargin:'0px 0px -22% 0px',threshold:0});sections.forEach(section=>observer.observe(section))})();
