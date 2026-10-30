@@ -136,3 +136,10 @@
 /* Fine tuning: droplet 0.5px left; crown splash red. */
 .scroll-cue span{left:calc(50% - 4.5px)}
 .essay .ym-crown{color:var(--red)}
+
+/* Make the splash legible: red crown above the boundary and more red droplets. */
+.essay .ym-crown{color:#d4000d;top:-5px;width:54px;height:34px;transform-origin:50% 90%}
+.essay .ym-crown svg{overflow:visible}
+.essay .ym-crown path{stroke-width:2.3}
+.essay .ym-crown circle{fill:#d4000d}
+@keyframes ym-crown-pop{0%,75%{opacity:0;transform:translate(-50%,-30%) scale(.2)}78%{opacity:1;transform:translate(-50%,-70%) scale(.8)}84%{opacity:1;transform:translate(-50%,-100%) scale(1.15)}92%{opacity:.55;transform:translate(-50%,-120%) scale(1.28)}97%,100%{opacity:0;transform:translate(-50%,-130%) scale(1.35)}}
