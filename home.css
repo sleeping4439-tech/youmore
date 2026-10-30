@@ -88,3 +88,8 @@
 .scroll-cue:before{height:calc(90% + 10px)}
 .scroll-cue:after{content:"";position:absolute;left:50%;top:calc(90% + 10px);bottom:auto;width:1px;height:var(--ym-drop-distance,300px);border:0;transform:none;background:repeating-linear-gradient(to bottom,#777 0 3px,transparent 3px 9px);pointer-events:none}
 .scroll-cue span{top:calc(90% + 10px);z-index:1;animation-duration:1.6s}
+
+/* Correction: extend the entire solid+dotted guide by only 10px total. */
+.scroll-cue:before{height:90%}
+.scroll-cue:after{top:90%;height:calc(var(--ym-drop-distance,300px) + 10px)}
+.scroll-cue span{top:90%}
