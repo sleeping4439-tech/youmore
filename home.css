@@ -187,3 +187,11 @@
 .hero.panels-ready .red-panel{animation-delay:.1s}
 .hero.panels-ready .black-panel{animation-delay:.22s}
 .hero.panels-ready .gray-panel{animation-delay:.34s}
+
+/* Scroll-triggered entrances for sections 01–03; text and artwork reveal separately. */
+@media(prefers-reduced-motion:no-preference){
+ html.ym-scroll-reveal .section:is(.essay,.visualize,.about) :is(.number,.kanji,h2,.art,.rule){opacity:0;transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+ html.ym-scroll-reveal .section:is(.essay,.visualize,.about) :is(.number,.kanji,h2,.rule){transform:translateY(22px)}
+ html.ym-scroll-reveal .section:is(.essay,.visualize,.about) .art{transform:translateY(34px)}
+ html.ym-scroll-reveal .section:is(.essay,.visualize,.about) .ym-revealed{opacity:1;transform:translateY(0);will-change:auto}
+}
