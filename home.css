@@ -226,3 +226,6 @@
 
 /* ESSAY kanji: nearly unmodified Mincho typeface. */
 .essay .kanji-gen-soft{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:600;font-style:normal;letter-spacing:0;transform:none;opacity:.72}
+
+/* Bring 言 closer to the soft, expressive 在 treatment; keep it legible and lighter. */
+.essay .kanji-gen-soft{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:700;letter-spacing:-.035em;transform:rotate(-1deg) skewX(-1deg);opacity:.42;color:#f1a7aa}
