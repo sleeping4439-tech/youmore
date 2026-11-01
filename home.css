@@ -311,3 +311,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Final ESSAY spacing correction: keep artwork 40px raised and prevent overlap. */
 .essay-red-group>.essay-thumb-strip{padding-top:350px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:350px}}
+
+/* Reduce ESSAY artwork-to-thumbnail spacing by 20px (350px to 330px). */
+.essay-red-group>.essay-thumb-strip{padding-top:330px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:330px}}
