@@ -235,8 +235,8 @@
 html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{opacity:1;color:rgba(241,167,170,.36);transform:none}
 
 /* Softer ESSAY kanji, with a reinforced first horizontal stroke. */
-.essay .kanji.kanji-gen-soft{color:rgba(241,167,170,.23)!important;position:absolute}
-html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,.23)!important}
+.essay .kanji.kanji-gen-soft{color:rgba(241,167,170,.35)!important;position:absolute}
+html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,.35)!important}
 .essay .kanji-gen-soft::before{content:"";position:absolute;left:23%;top:12%;width:49%;height:.022em;background:currentColor;pointer-events:none}
 
 /* Shift ESSAY title and its attached arrow together 20px left. */
