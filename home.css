@@ -319,3 +319,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Tighten the empty red band marked in the screenshot, without moving the leaves. */
 .essay-red-group>.essay-thumb-strip{padding-top:130px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:130px}}
+
+/* Keep thumbnail clear of the leaf artwork while removing excessive red space. */
+.essay-red-group>.essay-thumb-strip{padding-top:270px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:270px}}
