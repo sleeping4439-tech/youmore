@@ -210,3 +210,6 @@
 .essay:focus-visible h2::before,.essay:active h2::before{transform:translate(8px,0) rotate(45deg)}
 .essay .essay-arrow{display:none}
 @media(prefers-reduced-motion:reduce){.essay h2::before,.essay h2::after{transition:none}}
+
+/* Ensure legacy section numbers are hidden even if old HTML is served. */
+.section .number{display:none!important}
