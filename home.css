@@ -241,3 +241,15 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 
 /* Shift ESSAY title and its attached arrow together 20px left. */
 .essay h2{left:calc(30% - 20px);margin-left:0}
+
+/* Thumbnail article strip directly below the ESSAY panel. */
+.essay-articles{background:var(--paper);padding:clamp(24px,4vw,56px) clamp(20px,6%,92px) clamp(34px,5vw,70px);overflow:hidden}
+.essay-articles-track{display:flex;gap:clamp(16px,3vw,36px);overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.essay-article-card{flex:0 0 min(68vw,430px);min-width:0;text-decoration:none;color:#111;scroll-snap-align:start;display:block}
+.essay-article-thumb{aspect-ratio:1.9;overflow:hidden;border-radius:8px;background:#e0000c;position:relative}
+.essay-article-thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.essay-article-meta{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:clamp(13px,1.5vw,19px);letter-spacing:.045em;line-height:1.5}
+.essay-article-dot{width:11px;height:11px;border-radius:50%;background:#999;flex:none}
+.essay-article-note{display:block;color:#777;font-size:11px;letter-spacing:.06em;margin:5px 0 0 21px}
+.essay-article-card:focus-visible .essay-article-thumb{outline:2px solid #111;outline-offset:3px}
+@media(min-width:701px){.essay-article-card{flex-basis:min(40vw,430px)}}
