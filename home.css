@@ -307,3 +307,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Reserve space for artwork extending 240px below the ESSAY section; then add 30px. */
 .essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:270px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:270px}}
+
+/* Final ESSAY spacing correction: keep artwork 40px raised and prevent overlap. */
+.essay-red-group>.essay-thumb-strip{padding-top:350px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:350px}}
