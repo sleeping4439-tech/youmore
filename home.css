@@ -292,3 +292,8 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:.5}
 html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .essay-red-group>.essay-thumb-strip{margin-top:-36px;padding-top:0;z-index:6}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{margin-top:-28px;padding-top:0}}
+
+/* Raise the leaf artwork 40px; place thumbnails 30px below the ESSAY artwork area. */
+.essay-red-group>.essay .art{bottom:-240px}
+.essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:30px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:30px}}
