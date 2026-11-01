@@ -327,3 +327,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Slightly raise ESSAY thumbnail without changing the artwork. */
 .essay-red-group>.essay-thumb-strip{padding-top:255px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:255px}}
+
+/* Raise ESSAY thumbnail a further 10px, keeping the leaf image unchanged. */
+.essay-red-group>.essay-thumb-strip{padding-top:245px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:245px}}
