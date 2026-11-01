@@ -195,3 +195,9 @@
  html.ym-scroll-reveal .section:is(.essay,.visualize,.about) .art{transform:translateY(34px)}
  html.ym-scroll-reveal .section:is(.essay,.visualize,.about) .ym-revealed{opacity:1;transform:translateY(0);will-change:auto}
 }
+
+/* 01 ESSAY: subtle rightward arrow motion on hover/tap and keyboard focus. */
+.essay .essay-arrow{position:absolute;z-index:5;right:5%;bottom:7%;font-family:Arial,sans-serif;font-size:clamp(25px,3.4vw,48px);font-weight:300;line-height:1;color:var(--paper);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover){.essay:hover .essay-arrow{transform:translateX(12px)}}
+.essay:focus-visible .essay-arrow,.essay:active .essay-arrow{transform:translateX(12px)}
+@media(prefers-reduced-motion:reduce){.essay .essay-arrow{transition:none}}
