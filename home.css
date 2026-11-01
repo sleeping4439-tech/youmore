@@ -264,3 +264,11 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 .essay-thumb-dot{width:10px;height:10px;flex:none;border-radius:50%;background:var(--gold)}
 .essay-thumb-caption{display:block;margin:5px 0 0 19px;font-size:11px;opacity:.72}
 @media(min-width:701px){.essay-thumb-strip{padding-bottom:55px}.essay-thumb-card{flex-basis:min(37vw,410px)}}
+
+/* ESSAY thumbnails overlay the leaf artwork without changing other sections. */
+.essay-red-group{position:relative}
+.essay-red-group>.essay .art{opacity:.5}
+.essay-red-group>.essay-thumb-strip{position:absolute;z-index:6;right:4%;bottom:5%;width:42%;padding:0;overflow-x:auto;gap:14px;background:transparent}
+.essay-red-group>.essay-thumb-strip .essay-thumb-card{flex:0 0 100%;max-width:100%}
+.essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:2.5}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{right:4%;bottom:5%;width:46%}.essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:1.8}.essay-red-group>.essay-thumb-strip .essay-thumb-title{font-size:11px;margin-top:6px}.essay-red-group>.essay-thumb-strip .essay-thumb-caption{font-size:9px;margin-top:2px}}
