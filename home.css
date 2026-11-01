@@ -272,10 +272,3 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 .essay-red-group>.essay-thumb-strip .essay-thumb-card{flex:0 0 100%;max-width:100%}
 .essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:2.5}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{right:4%;bottom:5%;width:46%}.essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:1.8}.essay-red-group>.essay-thumb-strip .essay-thumb-title{font-size:11px;margin-top:6px}.essay-red-group>.essay-thumb-strip .essay-thumb-caption{font-size:9px;margin-top:2px}}
-
-/* Fix overlay: pin thumbnail to the artwork area, not below the tall red group. */
-.essay-red-group{position:relative}
-.essay-red-group>.essay-thumb-strip{position:absolute!important;top:38%!important;right:5%!important;bottom:auto!important;width:44%!important;z-index:20!important;padding:0!important;overflow:visible!important}
-.essay-red-group>.essay-thumb-strip .essay-thumb-card{width:100%;flex:0 0 100%}
-.essay-red-group>.essay .art{opacity:.5!important}
-@media(max-width:700px){.essay-red-group>.essay-thumb-strip{top:40%!important;right:5%!important;width:48%!important}}
