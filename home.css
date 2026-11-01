@@ -279,3 +279,10 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 .essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:1.9}
 @media(min-width:701px){.essay-red-group>.essay-thumb-strip{padding-bottom:60px}.essay-red-group>.essay-thumb-strip .essay-thumb-card{flex-basis:min(37vw,410px)}}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{right:auto;bottom:auto;width:100%;padding:20px 6% 44px}.essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:1.9}.essay-red-group>.essay-thumb-strip .essay-thumb-title{font-size:clamp(13px,1.6vw,19px);margin-top:13px}.essay-red-group>.essay-thumb-strip .essay-thumb-caption{font-size:11px;margin-top:5px}}
+
+/* Left-extended supplied ESSAY artwork; keep its previous top, reduce height by 50px. */
+.essay-red-group>.essay{container-type:inline-size}
+.essay-red-group>.essay .art{left:0;right:auto;bottom:-280px;width:auto;height:calc(46.908382cqw - 50px);max-height:none;object-fit:contain;opacity:.5}
+@media(max-width:700px){.essay-red-group>.essay .art{height:calc(min(121.762183cqw,51.256281cqw + 280px) - 50px)}}
+html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:.5}
+
