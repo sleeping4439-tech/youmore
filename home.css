@@ -240,4 +240,4 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 .essay .kanji-gen-soft::before{content:"";position:absolute;left:23%;top:12%;width:49%;height:.022em;background:currentColor;pointer-events:none}
 
 /* Shift ESSAY title and its attached arrow together 20px left. */
-.essay h2{margin-left:-20px}
+.essay h2{left:calc(30% - 20px);margin-left:0}
