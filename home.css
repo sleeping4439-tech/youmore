@@ -253,3 +253,14 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 .essay-article-note{display:block;color:#777;font-size:11px;letter-spacing:.06em;margin:5px 0 0 21px}
 .essay-article-card:focus-visible .essay-article-thumb{outline:2px solid #111;outline-offset:3px}
 @media(min-width:701px){.essay-article-card{flex-basis:min(40vw,430px)}}
+
+/* Article thumbnails integrated into the red ESSAY area; original panel unchanged. */
+.essay-red-group{background:var(--red)}
+.essay-thumb-strip{display:flex;gap:20px;overflow-x:auto;padding:12px 6% 38px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.essay-thumb-card{display:block;flex:0 0 min(70vw,410px);color:var(--paper);text-decoration:none;scroll-snap-align:start}
+.essay-thumb-image{display:block;aspect-ratio:1.9;overflow:hidden;border-radius:8px;background:#b9000b}
+.essay-thumb-image img{width:100%;height:100%;display:block;object-fit:cover}
+.essay-thumb-title{display:flex;gap:9px;align-items:center;margin-top:13px;font-size:clamp(13px,1.6vw,19px);letter-spacing:.05em}
+.essay-thumb-dot{width:10px;height:10px;flex:none;border-radius:50%;background:var(--gold)}
+.essay-thumb-caption{display:block;margin:5px 0 0 19px;font-size:11px;opacity:.72}
+@media(min-width:701px){.essay-thumb-strip{padding-bottom:55px}.essay-thumb-card{flex-basis:min(37vw,410px)}}
