@@ -286,3 +286,9 @@ html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{color:rgba(241,167,170,
 @media(max-width:700px){.essay-red-group>.essay .art{height:calc(min(121.762183cqw,51.256281cqw + 280px) - 50px)}}
 html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:.5}
 
+
+/* Latest request: full-opacity leaves and tighter spacing to article thumbnail. */
+.essay-red-group>.essay .art{opacity:1}
+html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
+.essay-red-group>.essay-thumb-strip{margin-top:-36px;padding-top:0;z-index:6}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{margin-top:-28px;padding-top:0}}
