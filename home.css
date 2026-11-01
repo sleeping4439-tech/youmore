@@ -297,3 +297,9 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .essay-red-group>.essay .art{bottom:-240px}
 .essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:30px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:30px}}
+
+/* Fix the actual gap: the global 350px section margin caused the large blank area. */
+.essay-red-group>.essay{margin-bottom:0}
+.essay-red-group>.essay::after{display:none}
+.essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:30px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{margin-top:0;padding-top:30px}}
