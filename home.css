@@ -201,3 +201,12 @@
 @media(hover:hover){.essay:hover .essay-arrow{transform:translateX(12px)}}
 .essay:focus-visible .essay-arrow,.essay:active .essay-arrow{transform:translateX(12px)}
 @media(prefers-reduced-motion:reduce){.essay .essay-arrow{transition:none}}
+
+/* ESSAY: animate the original arrow drawn beside the title, not a second arrow. */
+.essay h2::after{content:"";display:block;position:relative;width:clamp(62px,15vw,150px);height:1px;background:currentColor;margin-top:clamp(14px,3vw,27px);transform-origin:left center;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.essay h2::before{content:"";position:absolute;left:clamp(62px,15vw,150px);top:calc(100% + clamp(10px,3vw,23px));width:9px;height:9px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translate(-7px,0) rotate(45deg);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover){.essay:hover h2::after{transform:scaleX(1.1)}.essay:hover h2::before{transform:translate(8px,0) rotate(45deg)}}
+.essay:focus-visible h2::after,.essay:active h2::after{transform:scaleX(1.1)}
+.essay:focus-visible h2::before,.essay:active h2::before{transform:translate(8px,0) rotate(45deg)}
+.essay .essay-arrow{display:none}
+@media(prefers-reduced-motion:reduce){.essay h2::before,.essay h2::after{transition:none}}
