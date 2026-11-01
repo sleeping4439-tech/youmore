@@ -229,3 +229,7 @@
 
 /* Bring 言 closer to the soft, expressive 在 treatment; keep it legible and lighter. */
 .essay .kanji-gen-soft{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:700;letter-spacing:-.035em;transform:rotate(-1deg) skewX(-1deg);opacity:.42;color:#f1a7aa}
+
+/* Fix: scroll-reveal was overriding the softer kanji opacity. Use translucent ink instead. */
+.essay .kanji.kanji-gen-soft{clip-path:none;filter:none;color:rgba(241,167,170,.36);opacity:1;transform:none;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:700;letter-spacing:0}
+html.ym-scroll-reveal .essay .kanji-gen-soft.ym-revealed{opacity:1;color:rgba(241,167,170,.36);transform:none}
