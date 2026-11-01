@@ -213,3 +213,9 @@
 
 /* Ensure legacy section numbers are hidden even if old HTML is served. */
 .section .number{display:none!important}
+
+/* ESSAY arrow: one intact SVG replaces conflicting pseudo-elements. Animate on touch screens too. */
+.essay h2::before,.essay h2::after{content:none!important;display:none!important}
+.essay .essay-link-arrow{display:block;width:clamp(100px,16vw,150px);height:auto;margin-top:clamp(8px,2vw,18px);overflow:visible;transform:translateX(0)}
+@media(prefers-reduced-motion:no-preference){.essay .essay-link-arrow{animation:essay-arrow-glide 2.8s ease-in-out infinite}@keyframes essay-arrow-glide{0%,20%,75%,100%{transform:translateX(0)}45%{transform:translateX(12px)}}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.essay:hover .essay-link-arrow{animation-duration:1.2s}}
