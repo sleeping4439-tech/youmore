@@ -323,3 +323,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Keep thumbnail clear of the leaf artwork while removing excessive red space. */
 .essay-red-group>.essay-thumb-strip{padding-top:270px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:270px}}
+
+/* Slightly raise ESSAY thumbnail without changing the artwork. */
+.essay-red-group>.essay-thumb-strip{padding-top:255px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:255px}}
