@@ -4,15 +4,20 @@
  const uuid=()=>typeof crypto.randomUUID==='function'?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(18)),b=>b.toString(16).padStart(2,'0')).join('');
  const API=document.querySelector('meta[name="canvas-api"]').content;
  let color='#252525',shared=[],draft=[],active=null,pointer=null,sheet=null,cursor=0,nextReset=0,clockOffset=0,pending=null,saving=false,syncing=false,resetTimer;
+ const overview=document.querySelector('#overview'),hint=document.querySelector('#view-hint');
+ let zoom=1,viewX=0;const PAPER_RATIO=3,DETAIL_RATIO=1.4;
+ function setView(x=null){end();zoom=x===null?1:PAPER_RATIO/DETAIL_RATIO;viewX=x===null?0:Math.max(0,Math.min(1-1/zoom,x-1/(2*zoom)));canvas.classList.toggle('detail',zoom>1);canvas.setAttribute('aria-label',zoom>1?'拡大した紙：ここに書き込めます':'横長の紙：書きたい場所をタップして拡大');overview.disabled=zoom===1;hint.textContent=zoom===1?'書きたい場所をタップして拡大':'拡大中。「全体を見る」で別の場所を選べます。';size();}
+ overview.addEventListener('click',()=>setView());
+ canvas.addEventListener('keydown',e=>{if(e.key==='Enter'&&zoom===1){e.preventDefault();setView(.5);}if(e.key==='Escape')setView();});
  const pointCount=()=>draft.reduce((n,s)=>n+s.points.length,0)+(active?.points.length||0);
  function controls(){save.disabled=saving||sheet===null||(!draft.length&&!pending);document.querySelector('#undo').disabled=saving||!!pending||!draft.length;document.querySelector('#clear').disabled=saving||!!pending||!draft.length;}
- function stroke(s){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.strokeStyle=ctx.fillStyle=s.color;ctx.lineWidth=w/450*2.2;ctx.lineCap=ctx.lineJoin='round';ctx.beginPath();s.points.forEach((p,i)=>i?ctx.lineTo(p[0]*w,p[1]*h):ctx.moveTo(p[0]*w,p[1]*h));if(s.points.length===1){ctx.arc(s.points[0][0]*w,s.points[0][1]*h,ctx.lineWidth/2,0,Math.PI*2);ctx.fill();}else ctx.stroke();}
+ function stroke(s){const w=canvas.clientWidth*zoom,h=w/PAPER_RATIO;ctx.strokeStyle=ctx.fillStyle=s.color;ctx.lineWidth=w/1800*2.2;ctx.lineCap=ctx.lineJoin='round';ctx.beginPath();s.points.forEach((p,i)=>i?ctx.lineTo((p[0]-viewX)*w,p[1]*h):ctx.moveTo((p[0]-viewX)*w,p[1]*h));if(s.points.length===1){ctx.arc((s.points[0][0]-viewX)*w,s.points[0][1]*h,ctx.lineWidth/2,0,Math.PI*2);ctx.fill();}else ctx.stroke();}
  function render(){ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);shared.forEach(e=>e.strokes.forEach(stroke));draft.forEach(stroke);if(active)stroke(active);controls();}
  function size(){const r=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);render();}
- function point(e){const r=canvas.getBoundingClientRect();return [Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)),Math.max(0,Math.min(1,(e.clientY-r.top)/r.height))].map(v=>Math.round(v*10000)/10000);}
+ function point(e){const r=canvas.getBoundingClientRect();return [Math.max(0,Math.min(1,viewX+(e.clientX-r.left)/(r.width*zoom))),Math.max(0,Math.min(1,(e.clientY-r.top)/(r.width*zoom/PAPER_RATIO)))].map(v=>Math.round(v*10000)/10000);}
  function end(){if(active)draft.push(active);active=null;pointer=null;render();}
- canvas.addEventListener('pointerdown',e=>{if(pointer!==null||saving||pending||sheet===null||(e.pointerType==='mouse'&&e.button!==0))return;if(draft.length>=40||pointCount()>=1600){status.textContent='いったん「残す」を押してから、続きをどうぞ。';return;}pointer=e.pointerId;canvas.setPointerCapture(pointer);active={color,points:[point(e)]};render();});
- canvas.addEventListener('pointermove',e=>{if(e.pointerId!==pointer||!active)return;if(active.points.length>=300||pointCount()>=1600){end();status.textContent='いったん「残す」を押してから、続きをどうぞ。';return;}const p=point(e),last=active.points.at(-1);if(Math.hypot(p[0]-last[0],p[1]-last[1])>.0015){active.points.push(p);render();}});
+ canvas.addEventListener('pointerdown',e=>{if(pointer!==null||saving||pending||sheet===null||(e.pointerType==='mouse'&&e.button!==0))return;if(zoom===1){setView(point(e)[0]);return;}if(draft.length>=40||pointCount()>=1600){status.textContent='いったん「残す」を押してから、続きをどうぞ。';return;}pointer=e.pointerId;canvas.setPointerCapture(pointer);active={color,points:[point(e)]};render();});
+ canvas.addEventListener('pointermove',e=>{if(e.pointerId!==pointer||!active)return;if(active.points.length>=300||pointCount()>=1600){end();status.textContent='いったん「残す」を押してから、続きをどうぞ。';return;}const p=point(e),last=active.points.at(-1);if(Math.hypot(p[0]-last[0],p[1]-last[1])>.0006){active.points.push(p);render();}});
  for(const type of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,e=>{if(e.pointerId===pointer)end();});
  document.querySelectorAll('[data-color]').forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;document.querySelectorAll('[data-color]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));}));
  document.querySelector('#undo').addEventListener('click',()=>{if(!saving&&!pending){draft.pop();render();}});
