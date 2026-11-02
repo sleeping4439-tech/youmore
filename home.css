@@ -365,7 +365,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
                var(--paper);
   }
   .hero::after{display:none}
-  .hero h1{left:15%;top:11%;width:52%;transform:none}
+  .hero h1{left:15%;top:11%;width:57.2%;transform:none}
   .dots{left:4.5%;top:4%;width:6%;height:8%}
   .red-panel{top:0;right:0;width:40.5%;height:12%}
   .black-panel{top:14%;right:0;width:18%;height:45%;bottom:auto}
@@ -379,4 +379,5 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
     font-size:clamp(12px,1.4vw,18px);line-height:1.6;
   }
   .scroll-cue{left:45%;top:47%;height:36%;bottom:auto}
+  .scroll-cue::before{top:-30px;height:calc(90% + 30px)}
 }
