@@ -402,7 +402,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Desktop ESSAY composition aligned with the supplied screenshot. */
 @media (min-width:701px){
   .essay-red-group>.essay{aspect-ratio:1455/615}
-  .essay-red-group>.essay .art{left:48%;bottom:0;height:100%;width:auto;max-height:none;object-fit:contain;object-position:left bottom}
+  .essay-red-group>.essay .art{left:0;right:auto;bottom:0;height:100%;width:auto;max-height:none;object-fit:contain;object-position:left bottom}
   .essay-red-group>.essay .kanji-gen-soft{left:7%;top:10%}
   .essay-red-group>.essay h2{top:36%}
   .essay-red-group>.essay-thumb-strip{padding-top:0}
