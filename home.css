@@ -406,7 +406,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
   .essay-red-group>.essay .kanji-gen-soft{left:7%;top:10%}
   .essay-red-group>.essay h2{top:36%}
   /* 80% of the current desktop size, shifted 40px right. */
-  .essay-red-group>.essay .kanji-gen-soft{transform:translateX(40px) scale(.64);transform-origin:top left}
-  .essay-red-group>.essay h2{transform:translateX(40px) scale(.64);transform-origin:top left}
-  .essay-red-group>.essay-thumb-strip{padding-top:0}
+  .essay-red-group>.essay .kanji-gen-soft{transform:translateX(40px) scale(.512);transform-origin:top left}
+  .essay-red-group>.essay h2{transform:translateX(40px) scale(.512);transform-origin:top left}
+  .essay-red-group>.essay-thumb-strip{padding-top:0;transform:translateY(-100px);margin-bottom:-100px}
 }
