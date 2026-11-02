@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>ESSAY editor prototype | ゆうもれ</title>
+<style>
+:root{--paper:#f0e5df;--red:#d4000d;--ink:#191414}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho",serif}button,input{font:inherit}button{cursor:pointer}.bar{position:sticky;top:0;z-index:4;background:var(--paper);border-bottom:1px solid #cdbdb4;padding:12px max(18px,calc((100vw - 960px)/2));display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brand{margin-right:auto;font:700 13px Arial;color:var(--red);letter-spacing:.1em}.bar button,.tools button{background:transparent;border:1px solid #b9aaa2;padding:8px 12px;border-radius:3px;font:12px Arial}.bar button.primary{background:var(--red);color:white;border-color:var(--red)}main{max-width:790px;margin:0 auto;padding:48px 24px 130px}.notice{font:12px/1.7 Arial;color:#755e55;border-left:3px solid var(--red);padding-left:12px;margin-bottom:32px}.mv{width:100%;aspect-ratio:1.35;display:flex;align-items:center;justify-content:center;background:#e2d4cc;border:1px dashed #a99589;position:relative;overflow:hidden}.mv img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.mv label{position:relative;z-index:1;background:#f0e5dfdd;padding:12px 18px;font:13px Arial;cursor:pointer}.mv input{display:none}.title{display:block;width:100%;border:0;background:transparent;outline:none;font-size:clamp(34px,7vw,66px);line-height:1.4;margin:28px 0 10px;font-weight:400}.meta{font:12px Arial;color:#88746b}.tools{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 14px}.editor{min-height:340px;font-size:18px;line-height:2.3;outline:none;overflow-wrap:anywhere}.editor:empty:before{content:"ここから書き始める";color:#aa9890}.editor h2{font-size:1.5em;font-weight:400;line-height:1.5}.editor img{display:block;max-width:100%;height:auto;margin:24px auto}.editor a{color:var(--red)}.foot{display:flex;justify-content:space-between;margin-top:40px;gap:15px;color:#806e64;font:12px Arial}.status{font:12px Arial;color:#806e64}body.preview .tools,body.preview .notice{display:none}body.preview .editor{outline:none}@media(max-width:600px){main{padding:26px 18px 70px}.bar{gap:6px}.bar button{padding:7px 9px}.editor{font-size:16px}}
+</style></head><body>
+<header class="bar"><span class="brand">ゆうもれ / ESSAY</span><button id="save">下書き保存</button><button id="preview">プレビュー</button><button id="export">データを書き出す</button><button class="primary" id="publish" disabled title="認証と公開API接続後に利用可能">公開（準備中）</button></header>
+<main><p class="notice">これは投稿エディターの試作版です。まだログイン認証・サーバー保存・公開機能はありません。下書きはこの端末内にのみ保存されます。秘密の文章や個人情報は入力しないでください。</p>
+<div class="mv"><img id="cover" alt="" hidden><label for="coverInput">＋ メインビジュアルを設定<input id="coverInput" type="file" accept="image/*"></label></div>
+<input id="title" class="title" placeholder="記事のタイトル" maxlength="140" aria-label="記事タイトル">
+<div class="meta" id="date"></div>
+<div class="tools" aria-label="本文編集ツール"><button data-command="formatBlock" data-value="h2">見出し</button><button data-command="formatBlock" data-value="p">本文</button><button data-command="bold">太字</button><button id="link">リンク</button><button id="insertImage">画像を挿入</button><input type="file" accept="image/*" id="bodyImage" hidden></div>
+<div id="editor" class="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="記事本文"></div>
+<div class="foot"><span id="status" class="status">未保存</span><span>ESSAY / ゆうもれ</span></div></main>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),key='youmore-essay-editor-prototype-v1';
+$('date').textContent=new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit'});
+const clean=html=>{const t=document.createElement('template');t.innerHTML=html;t.content.querySelectorAll('script,style,iframe,object,embed,form,input,button,svg,math').forEach(e=>e.remove());t.content.querySelectorAll('*').forEach(e=>{for(const a of [...e.attributes]){if(a.name.startsWith('on')||a.name==='style'||a.name==='srcdoc'||(a.name==='href'&&!/^https?:\/\//i.test(a.value))||(a.name==='src'&&!/^data:image\/(png|jpeg|webp);base64,/i.test(a.value)))e.removeAttribute(a.name)}});return t.innerHTML};
+const draft=()=>({title:$('title').value,cover:$('cover').hidden?'':$('cover').src,body:clean($('editor').innerHTML),updatedAt:new Date().toISOString()});
+const setStatus=s=>$('status').textContent=s;
+function save(){try{localStorage.setItem(key,JSON.stringify(draft()));setStatus('この端末に下書きを保存しました')}catch{setStatus('保存できませんでした。画像容量を小さくしてください')}}
+try{const d=JSON.parse(localStorage.getItem(key)||'null');if(d){$('title').value=d.title||'';$('editor').innerHTML=clean(d.body||'');if(d.cover&&/^data:image\/(png|jpeg|webp);base64,/i.test(d.cover)){$('cover').src=d.cover;$('cover').hidden=false}setStatus('端末内の下書きを復元しました')}}catch{}
+$('save').onclick=save;$('preview').onclick=()=>{const on=document.body.classList.toggle('preview');$('editor').contentEditable=String(!on);$('preview').textContent=on?'編集に戻る':'プレビュー'};
+document.querySelectorAll('[data-command]').forEach(b=>b.onclick=()=>{if(document.body.classList.contains('preview'))return;$('editor').focus();document.execCommand(b.dataset.command,false,b.dataset.value||null)});
+$('link').onclick=()=>{const u=prompt('リンク先URL（https://）');if(!u||!/^https:\/\//i.test(u))return;$('editor').focus();document.execCommand('createLink',false,u)};
+function readImage(file,done){if(!file||!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>3*1024*1024){setStatus('PNG/JPEG/WebP、3MB以下の画像を選択してください');return}const reader=new FileReader();reader.onload=()=>done(reader.result);reader.readAsDataURL(file)}
+$('coverInput').onchange=e=>readImage(e.target.files[0],src=>{$('cover').src=src;$('cover').hidden=false;setStatus('MVを設定しました。下書き保存してください')});
+$('insertImage').onclick=()=>{$('editor').focus();$('bodyImage').click()};
+$('bodyImage').onchange=e=>readImage(e.target.files[0],src=>{const img=document.createElement('img');img.src=src;img.alt='';$('editor').append(img);setStatus('画像を挿入しました')});
+$('export').onclick=()=>{const blob=new Blob([JSON.stringify(draft(),null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='youmore-essay-draft.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),500)};
+})();
+</script></body></html>
