@@ -338,3 +338,11 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* The ESSAY wrapper broke the old adjacent-sibling selector for the droplet splash. */
 .hero.panels-finished + .essay-red-group > .essay .ym-crown{animation:ym-crown-pop 1.5852s linear infinite}
 @media(prefers-reduced-motion:reduce){.hero.panels-finished + .essay-red-group > .essay .ym-crown{animation:none;opacity:0}}
+
+/* Two-card horizontal ESSAY slider; existing artwork and vertical spacing stay unchanged. */
+.essay-red-group>.essay-thumb-strip{scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding-inline:6%;overscroll-behavior-x:contain}
+.essay-red-group>.essay-thumb-strip .essay-thumb-card{scroll-snap-align:start}
+.essay-slider-controls{display:flex;justify-content:flex-end;gap:12px;padding:0 6% 20px}
+.essay-slider-controls button{appearance:none;border:1px solid rgba(255,255,255,.75);border-radius:50%;width:38px;height:38px;background:transparent;color:var(--paper);font-size:20px;cursor:pointer}
+.essay-slider-controls button:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip .essay-thumb-card{flex-basis:78vw}}
