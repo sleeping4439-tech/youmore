@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS strokes (id INTEGER PRIMARY KEY AUTOINCREMENT, sheet TEXT NOT NULL, color TEXT NOT NULL, points TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_strokes_sheet_id ON strokes(sheet,id);
