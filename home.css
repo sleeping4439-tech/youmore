@@ -346,3 +346,10 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .essay-slider-controls button{appearance:none;border:1px solid rgba(255,255,255,.75);border-radius:50%;width:38px;height:38px;background:transparent;color:var(--paper);font-size:20px;cursor:pointer}
 .essay-slider-controls button:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip .essay-thumb-card{flex-basis:78vw}}
+
+/* FRAGMENTS section directly below ESSAY; no destination page yet. */
+.fragments{aspect-ratio:796/340;background:#e7ded6;color:#202020}
+.fragments-kanji{position:absolute;left:9%;top:5%;font-size:clamp(86px,22vw,310px);font-weight:300;line-height:1.1;opacity:.15;font-family:serif}
+.fragments h2{left:30%;top:40%;font-size:clamp(15px,3.2vw,46px);letter-spacing:.14em}
+.fragments-note{position:absolute;left:30%;top:58%;font-size:clamp(10px,1.3vw,17px);letter-spacing:.1em}
+@media(max-width:700px){.fragments{aspect-ratio:796/430}.fragments-kanji{top:14%;font-size:25vw}.fragments h2{top:39%}.fragments-note{top:59%;font-size:10px}}
