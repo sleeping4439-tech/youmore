@@ -394,7 +394,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 
 /* Desktop-only ESSAY artwork and typography adjustment. */
 @media (min-width:701px){
-  .essay-red-group>.essay .art{left:10%}
+  .essay-red-group>.essay .art{left:44.3%}
   .essay-red-group>.essay .kanji-gen-soft{transform:scale(.8);transform-origin:top left}
   .essay-red-group>.essay h2{transform:scale(.8);transform-origin:top left}
 }
