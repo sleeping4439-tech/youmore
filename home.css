@@ -426,3 +426,14 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
  html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft.ym-revealed,
  .essay-red-group>.essay .kanji.kanji-gen-soft{transform:translateX(100px) scale(.735)!important;transform-origin:top left}
 }
+
+/* Anchor the kanji's horizontal position independently of reveal transforms. */
+@media (min-width:701px){
+ .essay-red-group>.essay .kanji.kanji-gen-soft,
+ html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft,
+ html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft.ym-revealed{
+  left:calc(7% + 100px)!important;
+  transform:scale(.735)!important;
+  transform-origin:top left;
+ }
+}
