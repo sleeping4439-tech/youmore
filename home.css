@@ -362,12 +362,13 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
     height:calc(100vw * 1004 / 1200 + 100px);
     --mv-extra:0px;
     margin-bottom:0;
-    background:linear-gradient(to right,transparent 0 82%,var(--red) 82% 100%) bottom / 100% calc(41% - 41px) no-repeat,
+    background:linear-gradient(to right,transparent 0 82%,var(--red) 82% 100%) bottom / 100% calc(41% - 41px + 3.33vw) no-repeat,
                var(--paper);
   }
   .hero::after{display:none}
   .hero h1{left:15%;top:11%;width:57.2%;transform:none}
   .dots{left:4.5%;top:4%;width:6%;height:8%}
+  .dots{transform:scale(.8);transform-origin:top left}
   .red-panel{top:0;right:0;width:40.5%;height:12%}
   .black-panel{top:14%;right:0;width:18%;height:45%;bottom:auto}
   .black-panel::after{height:0;bottom:auto}
