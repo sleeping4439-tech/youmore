@@ -376,7 +376,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
   .hero nav a{font-size:clamp(10px,1vw,13px)}
   .mv-copy{
     left:13.5%;top:45%;width:30%;height:38%;
-    font-size:clamp(12px,1.4vw,18px);line-height:1.6;
+    font-size:clamp(6px,0.7vw,9px);line-height:1.6;
   }
   .scroll-cue{left:45%;top:47%;height:36%;bottom:auto}
 }
