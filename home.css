@@ -410,3 +410,9 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
   .essay-red-group>.essay h2{transform:translateX(40px) scale(.512);transform-origin:top left}
   .essay-red-group>.essay-thumb-strip{padding-top:0;transform:translateY(-100px);margin-bottom:-100px}
 }
+
+/* Ensure the desktop ESSAY heading stays scaled after scroll reveal. */
+@media (min-width:701px){
+  html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft,
+  html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft.ym-revealed{transform:translateX(40px) scale(.512);transform-origin:top left}
+}
