@@ -331,3 +331,10 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Raise ESSAY thumbnail a further 10px, keeping the leaf image unchanged. */
 .essay-red-group>.essay-thumb-strip{padding-top:245px}
 @media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:245px}}
+
+/* Screenshot adjustment: reduce the ~160px marked band to about one third. */
+.essay-red-group>.essay-thumb-strip{padding-top:190px}
+@media(max-width:700px){.essay-red-group>.essay-thumb-strip{padding-top:190px}}
+/* The ESSAY wrapper broke the old adjacent-sibling selector for the droplet splash. */
+.hero.panels-finished + .essay-red-group > .essay .ym-crown{animation:ym-crown-pop 1.5852s linear infinite}
+@media(prefers-reduced-motion:reduce){.hero.panels-finished + .essay-red-group > .essay .ym-crown{animation:none;opacity:0}}
