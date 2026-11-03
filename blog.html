@@ -82,6 +82,17 @@ body{background:var(--cream);color:#111}
 .hero-art{right:0;top:0;bottom:auto;translate:none;transform:scale(1.4);transform-origin:right top;animation:none!important}
 @media(min-width:701px){.hero{height:calc(min(100vw,1540px) * 660 / 1540 - 60px);aspect-ratio:auto}}
 @media(max-width:700px){.hero{height:calc(100vw * 408 / 796 - 60px);aspect-ratio:auto}.hero-art{right:0;top:0;translate:none;transform:scale(1.4);transform-origin:right top}}
+
+/* Raise the red MV boundary 40px, and all MV artwork/text by 40px. */
+.hero{height:calc(100vw * 408 / 796 - 100px)}
+@media(min-width:701px){.hero{height:calc(min(100vw,1540px) * 660 / 1540 - 100px)}}
+@media(max-width:700px){.hero{height:calc(100vw * 408 / 796 - 100px)}}
+.hero-main .kanji-gen-soft{top:calc(12.5% - 40px)}
+.hero h1{top:calc(39% - 40px)}
+.hero-sub{top:calc(70% - 40px)}
+.hero-art{top:-40px}
+@media(min-width:701px){.hero h1{top:calc(40% - 40px)}}
+@media(max-width:700px){.hero-sub{top:calc(72% - 40px)}}
 </style>
 </head>
 <body>
