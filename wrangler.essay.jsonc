@@ -1,0 +1,10 @@
+{
+ "name":"youmore-essay-admin",
+ "main":"essay-publish-worker.js",
+ "compatibility_date":"2026-11-01",
+ "workers_dev":true,
+ "preview_urls":false,
+ "vars":{"EDITOR_ORIGIN":"https://youmore-essay-admin.sleeping4439.workers.dev","ACCESS_TEAM_DOMAIN":"","ACCESS_AUD":"","OWNER_EMAIL":""},
+ "ratelimits":[{"name":"ADMIN_LIMITER","namespace_id":"1003","simple":{"limit":30,"period":60}}],
+ "observability":{"enabled":false}
+}

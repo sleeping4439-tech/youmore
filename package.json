@@ -1,0 +1,1 @@
+{"type":"module","scripts":{"dev":"node tests/essay-preview.mjs","test":"node --test tests/essay.test.mjs","build:admin":"node scripts/build-essay-admin.mjs"}}

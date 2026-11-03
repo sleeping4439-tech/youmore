@@ -1,0 +1,16 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import worker,{bodyToHTML,articleHTML,validateImage,prependCard,boundedJSON} from '../essay-publish-worker.js';import {fixture} from './essay-fixture.mjs';
+const png='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=';
+test('rich text is escaped, unsupported content rejected, design template retained',()=>{assert.match(bodyToHTML([{type:'p',children:[{type:'strong',children:[{type:'text',text:'<script>x</script>'}]}]}]),/&lt;script&gt;/);assert.throws(()=>bodyToHTML([{type:'p',children:[{type:'link',href:'javascript:1',children:[]}]}]));const h=articleHTML('題','<p>文</p>','', '2026-11-04');assert.match(h,/header class="topbar"/);assert.match(h,/<h1>題<\/h1>/);assert.doesNotMatch(h,/<img class="article-mv"/);assert.throws(()=>prependCard('','essay-card-grid','x'))});
+test('image signatures and streaming body limits',async()=>{assert.match((await validateImage(png)).path,/\.png$/);await assert.rejects(validateImage('data:image/png;base64,AAAAAAAAAAAAAAAA'));await assert.rejects(boundedJSON(new Request('https://x',{method:'POST',body:'123456'}),3))});
+test('signed owner auth, upload and atomic publish, retry, invalid identities',async()=>{const f=await fixture(),old=global.fetch;global.fetch=f.network;try{
+ const defaultToken=await f.token(); const request=async(path,data,token=defaultToken,origin=f.env.EDITOR_ORIGIN)=>worker.fetch(new Request(f.env.EDITOR_ORIGIN+path,{method:data?'POST':'GET',headers:{'Cf-Access-Jwt-Assertion':token,Origin:origin,'Content-Type':'application/json','X-Youmore-Editor':'1'},body:data?JSON.stringify(data):undefined}),f.env);
+ assert.equal((await request('/api/session',null,'')).status,401);assert.equal((await request('/api/session',null,await f.token({email:'other@example.com'}))).status,401);assert.equal((await request('/api/session',null,await f.token({exp:1}))).status,401);assert.equal((await request('/api/session',null,await f.token({aud:'bad'}))).status,401);assert.equal((await request('/api/session')).status,200);
+ assert.equal((await worker.fetch(new Request('https://admin.test/'),{})).status,503);
+ assert.equal((await request('/publish',{},await f.token(),'https://evil.test')).status,403);
+ const before=f.files.get('index.html'),asset=await (await request('/upload',{data:png})).json();assert.ok(asset.sha);assert.equal(f.files.get('index.html'),before);assert.equal(f.files.has(asset.path),false);
+ const data={id:crypto.randomUUID(),title:'公開テスト',mv:asset.path,assets:[{path:asset.path,sha:asset.sha}],blocks:[{type:'p',children:[{type:'text',text:'文章'},{type:'strong',children:[{type:'text',text:'太字'}]}]},{type:'image',url:asset.path}]};
+ const r=await (await request('/publish',data)).json();assert.equal(r.ok,true);assert.ok(f.files.has(r.path));assert.ok(f.files.has(asset.path));for(const p of ['blog.html','index.html'])assert.match(f.files.get(p),new RegExp(r.path));
+ const after=f.files.get('index.html');assert.equal((await (await request('/publish',data)).json()).duplicate,true);assert.equal(f.files.get('index.html'),after);
+ assert.equal((await request('/publish',{...data,title:'changed'})).status,400);
+ }finally{global.fetch=old}});
