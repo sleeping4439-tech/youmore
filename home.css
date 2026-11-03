@@ -433,7 +433,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
  html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft,
  html.ym-scroll-reveal .essay-red-group>.essay .kanji.kanji-gen-soft.ym-revealed{
   left:calc(7% + 100px)!important;
-  transform:scale(.735)!important;
+  transform:scale(.882)!important;
   transform-origin:top left;
  }
 }
