@@ -459,3 +459,6 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* 「遊」: heavier, softly irregular lettering to harmonize with 言 / 在. */
 .fragments-kanji{left:9%;top:8%;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-size:clamp(92px,22vw,310px);font-weight:900;line-height:1.05;letter-spacing:-.045em;opacity:.28;transform:rotate(-3deg) skew(-2deg,1deg);transform-origin:45% 55%;text-shadow:.012em .008em 0 currentColor,-.008em .006em 0 currentColor}
 @media(max-width:700px){.fragments-kanji{top:14%;font-size:25vw}}
+
+/* Subtle extra hand-drawn irregularity for 遊; retain existing scale and color. */
+.fragments-kanji{transform:rotate(-3.4deg) skew(-2.4deg,1.3deg);text-shadow:.014em .009em 0 currentColor,-.009em .004em 0 currentColor;filter:drop-shadow(.004em -.003em 0 currentColor)}
