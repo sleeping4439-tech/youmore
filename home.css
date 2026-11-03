@@ -455,3 +455,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 
 /* ESSAY leaf: 120% scale, fixed at top right. */
 @media (min-width:701px){.essay-red-group>.essay .art{transform:translateY(-60px) scale(1.728);transform-origin:right top}}
+
+/* 「遊」: heavier, softly irregular lettering to harmonize with 言 / 在. */
+.fragments-kanji{left:9%;top:8%;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-size:clamp(92px,22vw,310px);font-weight:900;line-height:1.05;letter-spacing:-.045em;opacity:.28;transform:rotate(-3deg) skew(-2deg,1deg);transform-origin:45% 55%;text-shadow:.012em .008em 0 currentColor,-.008em .006em 0 currentColor}
+@media(max-width:700px){.fragments-kanji{top:14%;font-size:25vw}}
