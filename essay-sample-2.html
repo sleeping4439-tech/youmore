@@ -29,13 +29,20 @@ header.topbar{position:relative;z-index:3;display:flex;justify-content:space-bet
 /* Article visual: edge-to-edge across the viewport. */
 .article-mv{width:100vw;max-width:none;margin-left:calc(50% - 50vw);border-radius:0}
 @media(max-width:600px){.article-mv{width:100vw;max-width:none;margin-left:calc(50% - 50vw)}}
+
+/* Place the full-bleed article visual directly beneath the header. */
+main{padding-top:0}
+.article-mv{margin-top:0}
+@media(max-width:600px){main{padding-top:0}.article-mv{margin-top:0}}
+/* Remove the former gold divider's vertical space. */
+.article-rule{display:none;margin:0;height:0}
 </style></head><body>
 <header class="topbar"><div class="header-left"><a class="brand-link" href="index.html" aria-label="ゆうもれのトップへ戻る"><svg class="brand-logo" viewBox="0 0 1953 805" role="img" aria-label="ゆうもれ"><defs><mask id="small-logo-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="1953" height="805"><rect width="1953" height="805" fill="white"/><path d="M1055 570 C1040 609 990 652 990 691 C990 728 1019 755 1055 755 C1091 755 1120 728 1120 691 C1120 652 1070 609 1055 570 Z" fill="black"/></mask></defs><g mask="url(#small-logo-cutout)"><ellipse cx="974.707" cy="393.378" rx="362.94" ry="368.556" fill="#df0012"/><image href="assets/editorial/logo_yuumore_previous.png" width="1953" height="805"/></g></svg></a><a class="essay-list-link" href="blog.html">ESSAY一覧</a></div><button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="essay-menu"><span></span><span></span><span></span></button><nav class="essay-menu" id="essay-menu" aria-label="メインナビゲーション"><a href="index.html">TOP</a><a href="blog.html">ESSAY</a><a href="photo.html">VISUALIZE</a><a href="about.html">ABOUT</a></nav></header>
 <main>
 <img class="article-mv" src="assets/editorial/01_essay_leaves_left.png" alt="" width="1080" height="800">
 <h1>雨上がりの帰り道</h1>
 <div class="meta">2026.11.02 &nbsp; / &nbsp; テスト記事</div>
-<div class="article-rule" aria-hidden="true"></div>
+
 <article>
 <p>雨が上がったばかりの道には、まだ小さな水たまりが残っていた。いつもの景色が少しだけ違って見える。</p>
 <p>濡れたアスファルトの匂い。傘をたたむ音。雲の切れ間から差し込む光。</p>
