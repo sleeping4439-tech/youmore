@@ -1,0 +1,14 @@
+{
+ "name":"youmore-canvas",
+ "main":"canvas-worker.js",
+ "compatibility_date":"2026-11-01",
+ "workers_dev":true,
+ "vars":{"ALLOWED_ORIGIN":"https://sleeping4439-tech.github.io"},
+ "d1_databases":[{"binding":"DB","database_name":"youmore-canvas","database_id":"9188225e-49f6-4967-b60c-68d4fe5601ab"}],
+ "ratelimits":[
+  {"name":"READ_LIMITER","namespace_id":"1001","simple":{"limit":120,"period":60}},
+  {"name":"WRITE_LIMITER","namespace_id":"1002","simple":{"limit":10,"period":60}}
+ ],
+ "triggers":{"crons":["0 15 * * SUN","5 * * * *"]},
+ "observability":{"enabled":false}
+}
