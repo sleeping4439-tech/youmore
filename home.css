@@ -448,7 +448,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* Stop the ESSAY link arrow animation on desktop and mobile. */
 .essay .essay-link-arrow,.essay:hover .essay-link-arrow{animation:none!important;transition:none!important;transform:none!important}
 /* Desktop: extend the arrow shaft 60px to the left; retain the tip position. */
-@media(min-width:701px){.essay .essay-link-arrow-desktop{width:501px!important;max-width:none;margin-left:-117px}}
+@media(min-width:701px){.essay .essay-link-arrow-desktop{width:384px!important;max-width:none;margin-left:0}}
 
 @media(min-width:701px){.essay .essay-link-arrow-mobile{display:none!important}}
 @media(max-width:700px){.essay .essay-link-arrow-desktop{display:none!important}}
