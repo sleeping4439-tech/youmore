@@ -437,3 +437,10 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
   transform-origin:top left;
  }
 }
+
+/* Desktop only: move ESSAY 60px toward the kanji, without moving the kanji. */
+@media (min-width:701px){
+ html.ym-scroll-reveal .essay-red-group>.essay h2,
+ html.ym-scroll-reveal .essay-red-group>.essay h2.ym-revealed,
+ .essay-red-group>.essay h2{transform:translateX(40px) scale(.512)!important;transform-origin:top left}
+}
