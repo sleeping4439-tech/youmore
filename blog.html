@@ -74,6 +74,14 @@ body{background:var(--cream);color:#111}
 .index-head,.empty{border-bottom-color:rgba(17,17,17,.2)}
 .index-head span,.empty small,.essay-card-meta{color:#666}
 .foot{background:var(--cream);color:#111;border-top:1px solid rgba(17,17,17,.16)}
+
+/* Match the homepage kanji, reduce the MV height by 60px, and enlarge the right-anchored leaf. */
+.hero{height:calc(100vw * 408 / 796 - 60px);aspect-ratio:auto;overflow:hidden}
+.hero-main svg.kanji-gen-soft{color:rgba(241,167,170,.50);filter:none;opacity:1}
+.hero-main svg.kanji-gen-soft::before{content:none}
+.hero-art{right:0;top:0;bottom:auto;translate:none;transform:scale(1.4);transform-origin:right top;animation:none!important}
+@media(min-width:701px){.hero{height:calc(min(100vw,1540px) * 660 / 1540 - 60px);aspect-ratio:auto}}
+@media(max-width:700px){.hero{height:calc(100vw * 408 / 796 - 60px);aspect-ratio:auto}.hero-art{right:0;top:0;translate:none;transform:scale(1.4);transform-origin:right top}}
 </style>
 </head>
 <body>
@@ -82,7 +90,7 @@ body{background:var(--cream);color:#111}
 <main>
 <section class="hero" aria-labelledby="essay-title">
 
-<div class="hero-main"><span class="kanji kanji-gen-soft" aria-hidden="true">言</span><h1 id="essay-title">ESSAY</h1><p class="hero-sub">言い漏らしたこと。<br>埋もれていたこと。<br>ここに、少しずつ。</p></div>
+<div class="hero-main"><svg class="kanji kanji-gen-soft" viewBox="200 100 850 800" aria-hidden="true" focusable="false" style="height:auto;overflow:visible"><g fill="currentColor"><path d="M444 159 Q554 167 688 159 L756 112 Q760 110 768 119 L823 174 Q827 183 817 187 Q628 191 470 204 L444 165 Z"/><path d="M249 291 Q540 302 870 291 L925 224 L1004 291 Q1010 299 1000 312 L985 321 Q608 308 270 333 L249 300 Z"/><path d="M396 397 Q562 411 728 397 L783 348 L848 400 Q857 408 849 421 L835 429 Q626 417 418 438 L396 405 Z"/><path d="M392 516 Q555 529 730 515 L787 467 L850 516 Q858 526 850 539 L836 547 Q620 536 413 560 L392 525 Z"/><path d="M393 606 Q530 637 746 609 L798 591 Q815 591 850 628 Q856 638 846 651 L840 838 Q818 859 766 865 Q752 866 753 843 L753 817 Q624 805 482 815 L482 844 Q468 869 410 875 Q396 874 395 853 L395 676 Q394 639 393 606 Z M484 665 Q476 677 476 710 L477 775 Q479 792 495 792 Q622 784 742 791 Q754 790 755 775 L755 665 Q753 648 740 648 Q606 648 495 653 Q487 655 484 665 Z"/></g></svg><h1 id="essay-title">ESSAY</h1><p class="hero-sub">言い漏らしたこと。<br>埋もれていたこと。<br>ここに、少しずつ。</p></div>
 <img class="hero-art" src="assets/editorial/01_essay_leaves_left.png" alt="" width="1254" height="1254">
 
 </section>
