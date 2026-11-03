@@ -444,3 +444,8 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
  html.ym-scroll-reveal .essay-red-group>.essay h2.ym-revealed,
  .essay-red-group>.essay h2{transform:translateX(40px) scale(.512)!important;transform-origin:top left}
 }
+
+/* Stop the ESSAY link arrow animation on desktop and mobile. */
+.essay .essay-link-arrow,.essay:hover .essay-link-arrow{animation:none!important;transition:none!important;transform:none!important}
+/* Desktop: extend the arrow shaft 60px to the left; retain the tip position. */
+@media(min-width:701px){.essay .essay-link-arrow{width:267px!important;max-width:none;margin-left:-117px}}
