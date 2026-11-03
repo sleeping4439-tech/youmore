@@ -33,7 +33,7 @@ async function readGitHubText(env,path){
  const res=await fetch(url,{headers:{'Authorization':'Bearer '+env.GITHUB_TOKEN,'Accept':'application/vnd.github+json','User-Agent':'youmore-editor'}});
  if(!res.ok)throw Error('GitHub read '+path+' '+res.status);
  const data=await res.json();
- return new TextDecoder().decode(Uint8Array.from(atob(data.content.replace(/\\s/g,'')),c=>c.charCodeAt(0)));
+ return new TextDecoder().decode(Uint8Array.from(atob(data.content.replace(/\s/g,'')),c=>c.charCodeAt(0)));
 }
 function prependCard(html,containerClass,card){
  const pattern=new RegExp('(<div class="'+containerClass+'"[^>]*>)');
@@ -43,7 +43,7 @@ function prependCard(html,containerClass,card){
 function listCard(path,title,mv,date,home){
  const href=escapeHTML(path),name=escapeHTML(title),image=escapeHTML(mv||'assets/editorial/01_essay_leaves.png');
  if(home)return '<a class="essay-thumb-card" href="'+href+'"><span class="essay-thumb-image"><img src="'+image+'" alt="" loading="lazy"></span><span class="essay-thumb-title"><span class="essay-thumb-dot" aria-hidden="true"></span>'+name+'</span><span class="essay-thumb-caption">'+date+'</span></a>';
- return '<a class="essay-card" href="'+href+'"><span class="essay-card-image"><img src="'+image+'" alt="" loading="lazy"></span><span class="essay-card-title">'+name+'</span><span class="essay-card-meta">'+date+'</span></a>\\n';
+ return '<a class="essay-card" href="'+href+'"><span class="essay-card-image"><img src="'+image+'" alt="" loading="lazy"></span><span class="essay-card-title">'+name+'</span><span class="essay-card-meta">'+date+'</span></a>\n';
 }
 export default {async fetch(req,env){
  const pathname=new URL(req.url).pathname;
