@@ -103,6 +103,12 @@ body{background:var(--cream);color:#111}
   .hero h1{translate:0 60px}
   .hero-sub{translate:-60px 0}
 }
+
+/* SP only: raise kanji and ESSAY 30px from previous positions; enlarge ESSAY 140%. */
+@media(max-width:700px){
+  .hero-main .kanji-gen-soft{translate:0 30px}
+  .hero h1{translate:0 30px;font-size:clamp(16.8px,4.48vw,64.4px)}
+}
 </style>
 </head>
 <body>
