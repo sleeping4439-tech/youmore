@@ -454,4 +454,4 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 @media(max-width:700px){.essay .essay-link-arrow-desktop{display:none!important}}
 
 /* ESSAY leaf: 120% scale, fixed at top right. */
-@media (min-width:701px){.essay-red-group>.essay .art{transform:scale(1.44);transform-origin:right top}}
+@media (min-width:701px){.essay-red-group>.essay .art{transform:translateY(-60px) scale(1.728);transform-origin:right top}}
