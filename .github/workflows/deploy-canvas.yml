@@ -1,0 +1,61 @@
+name: Deploy CANVAS backend
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: youmore-canvas-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 1a23728ff08de61664a345c78e3967d0dc83987f
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check required secrets
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "::error::Set CLOUDFLARE_API_TOKEN in repository Actions secrets"; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "::error::Set CLOUDFLARE_ACCOUNT_ID in repository Actions secrets"; exit 1; }
+      - name: Test application
+        run: node --test tests/canvas.test.mjs
+      - name: Prepare dedicated D1 database
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const account = process.env.CLOUDFLARE_ACCOUNT_ID;
+          if (!/^[a-f0-9]{32}$/i.test(account)) throw new Error('Invalid account ID');
+          const base = 'https://api.cloudflare.com/client/v4/accounts/' + account;
+          async function api(path, method='GET', body) {
+            const r = await fetch(base + path, {method, headers: {
+              Authorization: 'Bearer ' + process.env.CLOUDFLARE_API_TOKEN,
+              'Content-Type':'application/json'
+            }, body: body ? JSON.stringify(body) : undefined});
+            const j = await r.json();
+            if (!r.ok || !j.success) throw new Error('Cloudflare API failed: HTTP ' + r.status + ', codes ' + (j.errors || []).map(e=>e.code).join(','));
+            return j.result;
+          }
+          const databases = await api('/d1/database?name=youmore-canvas&per_page=100');
+          const matches = databases.filter(d=>d.name==='youmore-canvas');
+          if (matches.length > 1) throw new Error('Ambiguous database name');
+          const db = matches[0] || await api('/d1/database','POST',{name:'youmore-canvas'});
+          const config = JSON.parse(fs.readFileSync('wrangler.canvas.jsonc','utf8'));
+          config.d1_databases[0].database_id = db.uuid;
+          fs.writeFileSync('wrangler.canvas.jsonc',JSON.stringify(config,null,2));
+          NODE
+      - name: Apply schema
+        run: npx --yes wrangler@4.156.2 d1 execute youmore-canvas --remote --file canvas-schema.sql --config wrangler.canvas.jsonc
+      - name: Deploy Worker and weekly schedule
+        run: npx --yes wrangler@4.156.2 deploy --config wrangler.canvas.jsonc
+      - name: Deployment notes
+        run: |
+          echo "CANVAS backend deployed. The Worker URL is in the deployment log." >> "$GITHUB_STEP_SUMMARY"
+          echo "Frontend and existing site files are unchanged. Verify the API before connecting canvas.html." >> "$GITHUB_STEP_SUMMARY"
