@@ -462,3 +462,8 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 
 /* Subtle extra hand-drawn irregularity for 遊; retain existing scale and color. */
 .fragments-kanji{transform:rotate(-3.4deg) skew(-2.4deg,1.3deg);text-shadow:.014em .009em 0 currentColor,-.009em .004em 0 currentColor;filter:drop-shadow(.004em -.003em 0 currentColor)}
+
+/* CANVAS: flat graffiti illustration, right side, over the existing cream background. */
+.fragments-art{position:absolute;right:-2%;top:4%;width:67%;height:92%;object-fit:contain;object-position:right center;pointer-events:none;z-index:0}
+.fragments-kanji,.fragments h2,.fragments .rule{z-index:1}
+@media(max-width:700px){.fragments-art{right:-13%;top:10%;width:78%;height:82%;opacity:.95}}
