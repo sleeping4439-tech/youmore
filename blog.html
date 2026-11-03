@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#d4000d">
+<meta name="theme-color" content="#f0e5df">
 <meta name="description" content="ゆうもれのエッセイ。言い漏らしたこと、埋もれていたこと。">
 <title>ESSAY | ゆうもれ</title>
 <style>
@@ -64,6 +64,16 @@ a{color:inherit}a:focus-visible{outline:2px solid var(--gold);outline-offset:5px
 @media(max-width:700px){.essay-card-grid{gap:16px}.essay-card-title{font-size:14px}.essay-card-meta{font-size:10px}}
 /* Move ESSAY hero leaf artwork 30px left at all viewport widths. */
 .hero-art{translate:-30px 0}
+
+/* ESSAY page zones: cream header and article area, red MV only. */
+body{background:var(--cream);color:#111}
+.topbar{background:var(--cream);color:#111;border-bottom:1px solid rgba(17,17,17,.16)}
+.topbar .menu-toggle span{background:#111}
+.hero{background:var(--red);color:var(--cream)}
+.index{background:var(--cream);color:#111}
+.index-head,.empty{border-bottom-color:rgba(17,17,17,.2)}
+.index-head span,.empty small,.essay-card-meta{color:#666}
+.foot{background:var(--cream);color:#111;border-top:1px solid rgba(17,17,17,.16)}
 </style>
 </head>
 <body>
