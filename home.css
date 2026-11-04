@@ -527,3 +527,6 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .about .kanji{left:9%!important;top:6%!important;width:23%!important}
 .fragments-kanji{left:9%!important;top:6%!important;font-size:clamp(86px,23vw,310px)!important;line-height:1!important}
 .about h2,.fragments h2{left:calc(30% - 20px)!important;top:36%!important;margin-left:0!important;font-size:clamp(12px,3.2vw,46px)!important;letter-spacing:.3em!important;transform:translateX(40px) scale(.512)!important;transform-origin:top left!important}
+
+/* Unify ESSAY homepage thumbnail proportions across desktop and mobile. */
+.essay-thumb-image,.essay-red-group>.essay-thumb-strip .essay-thumb-image{aspect-ratio:1.9/1!important}
