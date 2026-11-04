@@ -502,3 +502,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .fragments::after{display:block!important;height:350px!important;background:#e7ded6}
 .fragments-art{position:absolute!important;top:auto!important;bottom:-330px!important;right:-8%!important;width:auto!important;height:clamp(450px,60vw,900px)!important;max-width:none!important;object-fit:contain!important;transform:none!important;z-index:2}
 @media(max-width:700px){.fragments{aspect-ratio:796/340!important;height:auto!important;min-height:0!important;margin-bottom:350px!important;overflow:visible!important}.fragments-art{top:auto!important;bottom:-300px!important;right:-55%!important;width:auto!important;height:125vw!important;max-height:540px!important;object-fit:contain!important;transform:none!important}.fragments-kanji{top:14%}.fragments h2{top:39%}}
+
+/* CANVAS art: half the previous rendered size, same right/bottom anchor. */
+.fragments-art{height:clamp(225px,30vw,450px)!important}
+@media(max-width:700px){.fragments-art{height:62.5vw!important;max-height:270px!important}}
