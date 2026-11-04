@@ -477,3 +477,6 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 
 /* CANVAS mobile final: fill the marked large lower-right region. */
 @media(max-width:700px){.fragments-art{right:-36%;top:4%;width:135%;height:84%;max-width:none;object-fit:fill}}
+
+/* CANVAS: enlarge actual artwork and anchor it to the lower-right on phones. */
+@media(max-width:700px){.fragments-art{top:auto;bottom:4%;right:-56%;width:165%;height:94%;object-fit:fill;object-position:right bottom;max-width:none}}
