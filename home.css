@@ -489,3 +489,10 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .fragments::after{display:none}
 @media(max-width:700px){.fragments{aspect-ratio:auto;height:270vw;min-height:900px;margin-bottom:0;overflow:hidden}.fragments-art{top:26%;bottom:auto;right:-42%;width:185%;height:69%;object-fit:fill;transform:none}.fragments-kanji{top:5%}.fragments h2{top:15%}.fragments .rule{top:35%}}
 @media(min-width:701px){.fragments{aspect-ratio:auto;min-height:clamp(600px,70vw,1050px);margin-bottom:0;overflow:hidden}.fragments-art{top:50%;right:-5%;height:110%;width:85%;transform:translateY(-50%)}}
+
+/* CANVAS: match ABOUT section's vertical structure and extended artwork placement. */
+.fragments{aspect-ratio:796/340;height:auto;min-height:0;margin-bottom:350px;overflow:visible}
+.fragments::after{display:block;content:"";position:absolute;top:100%;left:0;width:100%;height:350px;background:inherit}
+.fragments-art{top:auto;bottom:-330px;right:0;width:94%;height:auto;max-width:none;object-fit:contain;object-position:right bottom;transform:none;z-index:1}
+@media(min-width:701px){.fragments{aspect-ratio:796/340;height:auto;min-height:0;margin-bottom:350px;overflow:visible}.fragments-art{top:auto;bottom:-330px;right:0;width:78%;height:auto;transform:none}}
+@media(max-width:700px){.fragments{aspect-ratio:796/340;height:auto;min-height:0;margin-bottom:350px;overflow:visible}.fragments-art{top:auto;bottom:-300px;right:-22%;width:160%;height:auto;max-width:none;object-fit:contain;transform:none}.fragments-kanji{top:14%}.fragments h2{top:39%}.fragments .rule{top:auto}}
