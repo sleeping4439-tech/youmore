@@ -484,3 +484,8 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* CANVAS art scale matched to the oversized illustrations in 言 / 在. */
 @media(min-width:701px){.fragments-art{top:50%;right:-5%;bottom:auto;width:83%;height:145%;object-fit:fill;transform:translateY(-50%);max-width:none}}
 @media(max-width:700px){.fragments-art{top:auto;bottom:-3%;right:-52%;width:185%;height:105%;object-fit:fill;object-position:right bottom;max-width:none;transform:none}}
+
+/* CANVAS: the cream area is a real tall section, not a short panel plus an empty ::after extension. */
+.fragments::after{display:none}
+@media(max-width:700px){.fragments{aspect-ratio:auto;height:270vw;min-height:900px;margin-bottom:0;overflow:hidden}.fragments-art{top:26%;bottom:auto;right:-42%;width:185%;height:69%;object-fit:fill;transform:none}.fragments-kanji{top:5%}.fragments h2{top:15%}.fragments .rule{top:35%}}
+@media(min-width:701px){.fragments{aspect-ratio:auto;min-height:clamp(600px,70vw,1050px);margin-bottom:0;overflow:hidden}.fragments-art{top:50%;right:-5%;height:110%;width:85%;transform:translateY(-50%)}}
