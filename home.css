@@ -506,3 +506,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* CANVAS art: half the previous rendered size, same right/bottom anchor. */
 .fragments-art{height:clamp(225px,30vw,450px)!important}
 @media(max-width:700px){.fragments-art{height:62.5vw!important;max-height:270px!important}}
+
+/* CANVAS: top-right anchored, 150% of the preceding half-size artwork. */
+.fragments-art{top:0!important;bottom:auto!important;right:0!important;height:clamp(337.5px,45vw,675px)!important;width:auto!important;max-width:none!important;transform:none!important}
+@media(max-width:700px){.fragments-art{top:0!important;bottom:auto!important;right:0!important;height:93.75vw!important;max-height:405px!important;width:auto!important}}
