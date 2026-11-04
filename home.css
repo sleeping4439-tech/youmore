@@ -522,3 +522,8 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* CANVAS: another 80% scaling, top-right fixed. */
 .fragments-art{height:clamp(172.8px,23.04vw,345.6px)!important}
 @media(max-width:700px){.fragments-art{height:48vw!important;max-height:207.36px!important}}
+
+/* Align CANVAS / ABOUT typography to the established ESSAY heading geometry. */
+.about .kanji{left:9%!important;top:6%!important;width:23%!important}
+.fragments-kanji{left:9%!important;top:6%!important;font-size:clamp(86px,23vw,310px)!important;line-height:1!important}
+.about h2,.fragments h2{left:calc(30% - 20px)!important;top:36%!important;margin-left:0!important;font-size:clamp(12px,3.2vw,46px)!important;letter-spacing:.3em!important;transform:translateX(40px) scale(.512)!important;transform-origin:top left!important}
