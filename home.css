@@ -480,3 +480,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 
 /* CANVAS: enlarge actual artwork and anchor it to the lower-right on phones. */
 @media(max-width:700px){.fragments-art{top:auto;bottom:4%;right:-56%;width:165%;height:94%;object-fit:fill;object-position:right bottom;max-width:none}}
+
+/* CANVAS art scale matched to the oversized illustrations in 言 / 在. */
+@media(min-width:701px){.fragments-art{top:50%;right:-5%;bottom:auto;width:83%;height:145%;object-fit:fill;transform:translateY(-50%);max-width:none}}
+@media(max-width:700px){.fragments-art{top:auto;bottom:-3%;right:-52%;width:185%;height:105%;object-fit:fill;object-position:right bottom;max-width:none;transform:none}}
