@@ -474,3 +474,6 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* CANVAS artwork: fluid, right-anchored on desktop; oversized toward lower right on mobile. */
 @media(min-width:701px){.fragments{overflow:hidden}.fragments-art{right:0;top:0;width:74%;height:100%;object-fit:contain;object-position:right center}}
 @media(max-width:700px){.fragments{overflow:hidden}.fragments-art{right:-27%;top:5%;width:112%;height:72%;max-width:none;object-fit:fill;opacity:1}}
+
+/* CANVAS mobile final: fill the marked large lower-right region. */
+@media(max-width:700px){.fragments-art{right:-36%;top:4%;width:135%;height:84%;max-width:none;object-fit:fill}}
