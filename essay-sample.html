@@ -38,6 +38,9 @@ main{padding-top:0}
 h1 + article{margin-top:40px}
 /* Remove the former gold divider's vertical space. */
 .article-rule{display:none;margin:0;height:0}
+
+/* Desktop only: halve the article hero image's rendered height; preserve full viewport width. */
+@media(min-width:701px){.article-mv{height:calc(100vw / 1.35 / 2)!important;aspect-ratio:auto!important;object-fit:cover!important}}
 </style></head><body>
 <header class="topbar"><div class="header-left"><a class="brand-link" href="index.html" aria-label="ゆうもれのトップへ戻る"><svg class="brand-logo" viewBox="0 0 1953 805" role="img" aria-label="ゆうもれ"><defs><mask id="small-logo-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="1953" height="805"><rect width="1953" height="805" fill="white"/><path d="M1055 570 C1040 609 990 652 990 691 C990 728 1019 755 1055 755 C1091 755 1120 728 1120 691 C1120 652 1070 609 1055 570 Z" fill="black"/></mask></defs><g mask="url(#small-logo-cutout)"><ellipse cx="974.707" cy="393.378" rx="362.94" ry="368.556" fill="#df0012"/><image href="assets/editorial/logo_yuumore_previous.png" width="1953" height="805"/></g></svg></a><a class="essay-list-link" href="blog.html">ESSAY一覧</a></div><button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="essay-menu"><span></span><span></span><span></span></button><nav class="essay-menu" id="essay-menu" aria-label="メインナビゲーション"><a href="index.html">TOP</a><a href="blog.html">ESSAY</a><a href="photo.html">VISUALIZE</a><a href="about.html">ABOUT</a></nav></header>
 <main>
