@@ -510,3 +510,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* CANVAS: top-right anchored, 150% of the preceding half-size artwork. */
 .fragments-art{top:0!important;bottom:auto!important;right:0!important;height:clamp(337.5px,45vw,675px)!important;width:auto!important;max-width:none!important;transform:none!important}
 @media(max-width:700px){.fragments-art{top:0!important;bottom:auto!important;right:0!important;height:93.75vw!important;max-height:405px!important;width:auto!important}}
+
+/* CANVAS: scale to 80% of previous size; preserve top-right anchor. */
+.fragments-art{height:clamp(270px,36vw,540px)!important}
+@media(max-width:700px){.fragments-art{height:75vw!important;max-height:324px!important}}
