@@ -518,3 +518,7 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 /* CANVAS: further reduce artwork to 80% of its immediately previous size; retain top-right anchor. */
 .fragments-art{height:clamp(216px,28.8vw,432px)!important}
 @media(max-width:700px){.fragments-art{height:60vw!important;max-height:259.2px!important}}
+
+/* CANVAS: another 80% scaling, top-right fixed. */
+.fragments-art{height:clamp(172.8px,23.04vw,345.6px)!important}
+@media(max-width:700px){.fragments-art{height:48vw!important;max-height:207.36px!important}}
