@@ -467,3 +467,6 @@ html.ym-scroll-reveal .essay-red-group>.essay .art.ym-revealed{opacity:1}
 .fragments-art{position:absolute;right:-2%;top:4%;width:67%;height:92%;object-fit:contain;object-position:right center;pointer-events:none;z-index:0}
 .fragments-kanji,.fragments h2,.fragments .rule{z-index:1}
 @media(max-width:700px){.fragments-art{right:-13%;top:10%;width:78%;height:82%;opacity:.95}}
+
+/* White canvas behind transparent article thumbnails. */
+.essay-thumb-image,.essay-article-thumb{background:#fff}
