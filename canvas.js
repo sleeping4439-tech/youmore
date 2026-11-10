@@ -5,7 +5,7 @@
  const API=document.querySelector('meta[name="canvas-api"]').content;
  let color='#252525',shared=[],draft=[],active=null,pointer=null,sheet=null,cursor=0,nextReset=0,clockOffset=0,pending=null,saving=false,syncing=false,resetTimer;
  const overview=document.querySelector('#overview'),hint=document.querySelector('#view-hint');
- let zoom=1,viewX=0,viewY=0,selection=null;const PAPER_RATIO=3,DETAIL_RATIO=1.4,AREA_SCALE=Math.SQRT2,DETAIL_ZOOM=PAPER_RATIO/DETAIL_RATIO*AREA_SCALE;
+ let zoom=1,viewX=0,viewY=0,selection=null;const PAPER_RATIO=3,DETAIL_RATIO=1.4,AREA_SCALE=Math.SQRT2*2,DETAIL_ZOOM=PAPER_RATIO/DETAIL_RATIO*AREA_SCALE;
  const frame=document.querySelector('#selection');
  function choose(x,y){const w=1/DETAIL_ZOOM,h=1/AREA_SCALE;selection={x:Math.max(0,Math.min(1-w,x-w/2)),y:Math.max(0,Math.min(1-h,y-h/2)),w,h};frame.hidden=false;Object.assign(frame.style,{left:selection.x*100+'%',top:selection.y*100+'%',width:w*100+'%',height:h*100+'%'});hint.textContent='枠内をもう一度タップすると拡大します。枠外で選び直せます。';}
  function setView(selected=null){end();zoom=selected?DETAIL_ZOOM:1;viewX=selected?selected.x:0;viewY=selected?selected.y:0;selection=null;frame.hidden=true;canvas.classList.toggle('detail',zoom>1);canvas.setAttribute('aria-label',zoom>1?'拡大した紙：ここに書き込めます':'横長の紙：タップで範囲選択、もう一度タップで拡大');overview.disabled=zoom===1;hint.textContent=zoom===1?'タップで範囲を選択、枠内をもう一度タップして拡大':'拡大中。「全体を見る」で別の場所を選べます。';size();}
