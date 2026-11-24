@@ -1,0 +1,82 @@
+.essay-mobile-label, .essay-mobile-lead { display: none; }
+
+@media (max-width: 700px) {
+  .essay-red-group {
+    background: #f70906;
+    padding-bottom: 15px;
+  }
+  .essay-red-group > #essay {
+    height: 89.1vw;
+    aspect-ratio: auto;
+    min-height: 0;
+    background: url("assets/editorial/essay-mobile-leaves.png") right 6.67vw top 3.47vw / 40vw auto no-repeat;
+  }
+  #essay .kanji.kanji-gen-soft {
+    left: 1vw !important;
+    top: 1.1vw !important;
+    width: 25vw !important;
+    transform: none !important;
+    color: #ff7563;
+    opacity: .65;
+  }
+  #essay h2 {
+    left: 21.3vw !important;
+    top: 11.7vw !important;
+    margin: 0;
+    transform: none !important;
+    font: bold 5.6vw/1 sans-serif;
+    letter-spacing: -.07em;
+    color: #080808;
+  }
+  #essay .essay-desktop-label, #essay .essay-link-arrow,
+  #essay .art, #essay .rule { display: none !important; }
+  #essay .essay-mobile-label { display: inline-flex; align-items: center; gap: .5vw; }
+  #essay .essay-mobile-label span {
+    display: grid;
+    place-items: center;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    background: #080808;
+    color: white;
+    font: normal 4vw/1 sans-serif;
+    letter-spacing: 0;
+  }
+  #essay .essay-mobile-lead {
+    display: block;
+    position: absolute;
+    left: 7.2vw;
+    top: 22.4vw;
+    width: 43vw;
+    margin: 0;
+    color: #570b06;
+    font: 1.55vw/1.8 sans-serif;
+  }
+  .essay-red-group > .essay-thumb-strip {
+    margin: 0;
+    padding: 0 6vw;
+    gap: 4vw;
+    transform: none;
+  }
+  .essay-red-group > .essay-thumb-strip .essay-thumb-card { flex-basis: 78vw; min-width: 0; }
+  .essay-red-group > .essay-thumb-strip .essay-thumb-image { border-radius: 6px; }
+  .essay-red-group > .essay-thumb-strip .essay-thumb-title {
+    gap: 7px;
+    margin-top: 10px;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  .essay-red-group .essay-thumb-dot { width: 8px; height: 8px; }
+  .essay-red-group > .essay-thumb-strip .essay-thumb-caption {
+    margin: 3px 0 0 15px;
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  .essay-red-group .essay-slider-controls { gap: 9px; padding: 32px 6vw 0; }
+  .essay-red-group .essay-slider-controls button {
+    width: 29px;
+    height: 29px;
+    padding: 0;
+    font-size: 16px;
+  }
+}
