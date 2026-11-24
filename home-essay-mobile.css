@@ -2,14 +2,14 @@
 
 @media (max-width: 700px) {
   .essay-red-group {
-    background: #f70906;
     padding-bottom: 15px;
   }
   .essay-red-group > #essay {
     height: 89.1vw;
     aspect-ratio: auto;
     min-height: 0;
-    background: url("assets/editorial/essay-mobile-leaves.png") right 6.67vw top 3.47vw / 40vw auto no-repeat;
+    background: url("assets/editorial/essay-mobile-leaves.png") right 6.67vw top 3.47vw / 40vw auto no-repeat,
+      linear-gradient(110deg, #d90212, #d4000d 65%, #ce000c);
   }
   #essay .kanji.kanji-gen-soft {
     left: 1vw !important;
